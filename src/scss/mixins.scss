@@ -1,0 +1,42 @@
+/***  screen  ***/
+@mixin desktop-width {
+    @media screen and (width > 968px) {
+        @content;
+    }
+}
+
+@mixin tablet-width {
+    @media screen and (width > 420px) and (width <= 968px) {
+        @content;
+    }
+}
+
+@mixin phone-width {
+    @media screen and (width <= 420px){
+        @content;
+    }
+}
+
+/***  fonts  ***/
+
+/***  buttons  ***/
+@mixin outline ($color: var(--pink-color)) {
+    &:focus { outline: none; }
+    &:focus-visible {
+        outline: 3px solid $color;
+    }
+}
+
+/***  svg  ***/
+@mixin svg ($isPath: true) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    width: inherit;
+    height: inherit;
+
+    @if $isPath {
+        >path { fill: currentColor; }
+    }
+}
