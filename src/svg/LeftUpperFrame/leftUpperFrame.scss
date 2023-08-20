@@ -1,0 +1,5 @@
+@import '/src/scss/mixins.scss';
+
+#left-upper-frame {
+    @include svg;
+}

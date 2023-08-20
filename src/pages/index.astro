@@ -11,12 +11,43 @@ const title = name;
 ---
 
 <Layout title={title}>
-    <Header client:visible//>
-    <Main client:visible/>
-    <About client:visible//>
-    <Services client:visible//>
-    <Contacts client:visible//>
+    <div id="app">
+        <Header client:only/>
+        <Main client:visible/>
+        <About client:visible/>
+        <Services client:visible/>
+        <Contacts client:visible/>
+    </div>
 </Layout>
 
 <style>
+    #app {
+        min-height: 100%;
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+    }
 </style>
+
+<script>
+    let header: HTMLHeadingElement | null = document.querySelector('.header');
+    let oldScroll: number = 0;
+    let isChangeDirection: boolean = true;
+
+    const changeClass = (isAdd: boolean) => {
+        if(header) {
+            isAdd ? header.classList.add('header_hide') : header.classList.remove('header_hide');
+            isChangeDirection = !isChangeDirection 
+        }
+    }
+
+    const scrollHeader = () => {
+        if (!header) { header = document.querySelector('.header'); }
+
+        if ( window.scrollY >= oldScroll && isChangeDirection ) { changeClass(true); } 
+        if (window.scrollY < oldScroll && !isChangeDirection) { changeClass(false); }
+        oldScroll = window.scrollY;
+    }
+
+    window.addEventListener('scroll', scrollHeader);
+</script>

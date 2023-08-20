@@ -18,12 +18,14 @@ const { title } = Astro.props;
 </html>
 
 <style is:global lang="scss">
+    @import '../scss/mixins.scss';
     :root {
         --dark-color: #1D1E2C;
         --gray-color: #59656F;
         --purple-color: #AC9FBB;
         --pink-color: #DDBDD5;
         --biege-color: #F7EBEC;
+        --dark-gradient: linear-gradient(to top, #1d1e2cce 7%, rgba(0, 0, 0, .15) 25%);
     }
 
     * {
@@ -35,13 +37,23 @@ const { title } = Astro.props;
 	html {
 		font-family: system-ui, sans-serif;
 		background: var(--dark-color);
-        height: 100dvh;
+        scroll-behavior: smooth;
+        overscroll-behavior: contain;
+        & body { height: 100dvh; }
 	}
 
-    body {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-flow: column;
+    button { 
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        @include outline;
     }
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        @include outline;
+    }
+
+    li { list-style-type: none; }
 </style>

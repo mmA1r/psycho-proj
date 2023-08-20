@@ -1,0 +1,10 @@
+@import '/src/scss/mixins.scss';
+
+#lotus { 
+    @include svg(false); 
+}
+
+.lotus__lower-petal  { fill: var(--gray-color); }
+.lotus__middle-petal { fill: var(--purple-color); }
+.lotus__upper-petal  { fill: var(--pink-color); }
+.lotus-dots          { fill: var(--biege-color); }

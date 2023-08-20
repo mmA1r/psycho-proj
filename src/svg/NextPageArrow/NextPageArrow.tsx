@@ -1,4 +1,4 @@
-import '../scss/svg.scss';
+import './nextPageArrow.scss';
 
 const NextPageArrow = () => {
     return (

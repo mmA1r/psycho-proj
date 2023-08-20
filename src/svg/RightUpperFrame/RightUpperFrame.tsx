@@ -1,4 +1,4 @@
-import './scss/svg.scss';
+import './rightUpperFrame.scss';
 
 const RightUpperFrame = () => {
     return (

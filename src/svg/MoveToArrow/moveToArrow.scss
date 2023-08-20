@@ -1,0 +1,12 @@
+@import '/src/scss/mixins.scss';
+
+#move-to-arrow {
+    @include svg;
+}
+
+#move-to-arrow_shaded {
+    @include svg(false);
+
+    >.move-to-arrow__common-elems { fill: currentColor; }
+    > stop { stop-color: currentColor; }
+}

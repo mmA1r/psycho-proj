@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&family=Nunito+Sans:ital,wght@1,200&family=Roboto:wght@100;300&display=swap');
+
 /***  screen  ***/
 @mixin desktop-width {
     @media screen and (width > 968px) {
@@ -19,13 +21,40 @@
 
 /***  fonts  ***/
 
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Nunito Sans', sans-serif; // quotes
+// font-family: 'Roboto', sans-serif;
+
+@mixin header-font (
+    $color: var(--biege-color),
+    $weight: 300
+) {
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin text-font (
+    $color: var(--biege-color),
+    $weight: 300
+) {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: $weight;
+    color: $color;
+}
+
 /***  buttons  ***/
 @mixin outline ($color: var(--pink-color)) {
     &:focus { outline: none; }
     &:focus-visible {
-        outline: 3px solid $color;
+        outline: 2.5px solid $color;
     }
 }
+
+// *** animations *** //
+@mixin interactive { transition: .7s; }
 
 /***  svg  ***/
 @mixin svg ($isPath: true) {
@@ -33,8 +62,8 @@
     left: 0;
     top: 0;
     fill: none;
-    width: inherit;
-    height: inherit;
+    width: 100%;
+    height: 100%;
 
     @if $isPath {
         >path { fill: currentColor; }

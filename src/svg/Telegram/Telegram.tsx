@@ -1,4 +1,4 @@
-import './scss/svg.scss';
+import './telegram.scss';
 
 const Telegram = () => {
     return (

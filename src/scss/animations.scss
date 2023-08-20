@@ -1,0 +1,14 @@
+@keyframes headerHide {
+    0% { opacity: 1; transform: translate3d(0, 0, 0); }
+    100% { opacity: .3; transform: translate3d(0, -100%, 0); }
+}
+
+@keyframes headerShow {
+    0% { opacity: .3; transform: translate3d(0, -100%, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes appear {
+    0% { opacity: .3; transform: scale(.7); } 
+    100% { opacity: 1; transform: scale(1); }
+}

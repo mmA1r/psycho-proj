@@ -1,4 +1,4 @@
-import './scss/svg.scss';
+import './lotus.scss';
 
 const Lotus = () => {
     return (

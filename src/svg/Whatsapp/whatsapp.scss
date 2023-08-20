@@ -1,0 +1,6 @@
+@import '/src/scss/mixins.scss';
+
+#whtasapp-icon {
+    @include svg;
+    >path { clip-rule: evenodd; }
+}

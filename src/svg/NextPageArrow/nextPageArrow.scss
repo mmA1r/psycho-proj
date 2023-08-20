@@ -1,0 +1,10 @@
+@import '/src/scss/mixins.scss';
+
+#next-page-arrow {
+    @include phone-width {
+        width: 50px;
+        height: 17px;
+        fill: none;
+        >path { fill: currentColor; }
+    }
+}

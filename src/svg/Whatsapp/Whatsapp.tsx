@@ -1,4 +1,4 @@
-import './scss/svg.scss';
+import './whatsapp.scss';
 
 const Whatsapp = () => {
     return (
