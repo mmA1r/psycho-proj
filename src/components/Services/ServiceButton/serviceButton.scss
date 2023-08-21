@@ -1,0 +1,35 @@
+@import '/src/scss/mixins.scss';
+
+.service__item {
+    position: relative;
+    width: 80%;
+    height: 85px;
+    color: var(--biege-color);
+}
+
+.service__button {
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--gray-color);
+    border-radius: 13px;
+    background-color: var(--dark-half-transparent);
+    font-style: italic;
+    padding: 0 5%;
+
+    @include text-font(var(--biege-color));
+    @include outline(var(--dark-color));
+}
+
+.service__sub-title {
+    @include text-font(var(--biege-color), 22px);
+    font-style: normal;
+}
+
+.service-button-svg {
+    position: absolute;
+    width: 13%;
+    height: 100%;
+    margin-right: 5px;
+    &.service__nail-svg { right: 0; }
+    &.service__consultation-svg { left: 0; transform: rotateZ(180deg); }
+}
