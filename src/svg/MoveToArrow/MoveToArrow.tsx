@@ -9,8 +9,8 @@ const MoveToArrow: FunctionComponent<MoveToArrow> = ({ isTrace, viewBox }) => {
     const def = isTrace ? 
         <defs>
             <linearGradient id="shadow-trace" x1="23.5" x2="1" y1="14" y2="14" gradientUnits="userSpaceOnUse">
-                <stop/>
-                <stop offset="1" stopOpacity="0"/>
+                <stop class="move-to-arrow__stop"/>
+                <stop class="move-to-arrow__stop move-to-arrow__stop_opacity" offset="1"/>
             </linearGradient>
         </defs> : '';
     const ids = isTrace ? 'move-to-arrow_shaded' : 'move-to-arrow';

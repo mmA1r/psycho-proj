@@ -1,3 +1,6 @@
+@import '/src/scss/animations.scss';
+@import '/src/scss/mixins.scss';
+
 .about {
     position: relative;
     width: 100%;
@@ -14,4 +17,17 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.about__information-slider {
+    position: relative;
+    height: 95%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.about__information-slides {
+    display: flex;
+    width: 200%;
+    height: 100%;
 }

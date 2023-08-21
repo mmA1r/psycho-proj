@@ -37,10 +37,11 @@
 
 @mixin text-font (
     $color: var(--biege-color),
+    $size: 18px,
     $weight: 300
 ) {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: $size;
     font-weight: $weight;
     color: $color;
 }
