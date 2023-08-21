@@ -1,9 +1,11 @@
 @import '/src/scss/mixins.scss';
 
 #youTube-icon {
-    @include svg(false);
+    fill: none;
+    width: 35px;
+    height: 25px;
     >path {
-        stroke-width: 2px;
+        stroke-width: 2.5px;
         stroke: currentColor;
         stroke-linecap: round;
         stroke-linejoin: round;

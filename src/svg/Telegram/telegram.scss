@@ -1,5 +1,9 @@
 @import '/src/scss/mixins.scss';
 
 #telegram-icon {
-    @include svg;
+    fill: none;
+    width: 35px;
+    height: 35px;
+    >path { fill: currentColor; }
+    //@include svg;
 }

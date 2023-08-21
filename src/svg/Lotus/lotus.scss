@@ -1,10 +1,49 @@
 @import '/src/scss/mixins.scss';
 
-#lotus { 
-    @include svg(false); 
+@keyframes upper-petal {
+    0% { transform: rotateZ(0) }
+    25% { transform: rotateZ(-2deg) translate3d(-2%, 2%, 0); }
+    50% { transform: rotateZ(0) }
+    75% { transform: rotateZ(3deg) translate3d(3%, -4%, 0); }
+    100% { transform: rotateZ(0) }
 }
 
-.lotus__lower-petal  { fill: var(--gray-color); }
-.lotus__middle-petal { fill: var(--purple-color); }
-.lotus__upper-petal  { fill: var(--pink-color); }
-.lotus-dots          { fill: var(--biege-color); }
+@keyframes middle-petal {
+    0% { transform: translate3d(0,0,0) }
+    50% { transform: translate3d(0,-3%,0) rotate(3deg); }
+    100% { transform: translate3d(0,0,0) }
+}
+
+@keyframes bottom-petal {
+    0% { transform: translate3d(0,0,0) }
+    50% { transform: translate3d(0, -2%,0); }
+    100% { transform: translate3d(0,0,0) }
+}
+
+@keyframes dots {
+    0% { transform: translate3d(0, 0, 0) }
+    50% { transform: translate3d(0, -7%, 0) }
+    100% { transform: translate3d(0, 0, 0) }
+}
+
+#lotus { 
+    @include svg(false);
+    >path { will-change: transform; }
+}
+
+.lotus__lower-petal  { 
+    fill: var(--gray-color);
+    animation: bottom-petal 5s linear infinite;
+}
+.lotus__middle-petal { 
+    fill: var(--purple-color);
+    animation: middle-petal 5s linear infinite;
+}
+.lotus__upper-petal  { 
+    fill: var(--pink-color);
+    animation: upper-petal 5s linear infinite;
+}
+.lotus-dots { 
+    fill: var(--biege-color);
+    animation: dots 5s linear infinite;
+}

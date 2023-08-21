@@ -4,7 +4,7 @@ import './about.scss';
 
 const About = () => {
     return (
-        <div id="about" class="about">
+        <section id="about" class="about">
             <div class="about__information-slider">
                 <div class="about__information-slides">
                     <InformationBlock type={InformationTypes.bio}/>
@@ -15,7 +15,7 @@ const About = () => {
                 class="next-page-button main__anchor"
                 href="#services"
             > <NextPageArrow/> </a>
-        </div>
+        </section>
     );
 }
 

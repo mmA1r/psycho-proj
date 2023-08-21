@@ -103,10 +103,10 @@
 
     "signIn": "Записаться",
 
+    "contactsTitle": "Контакты",
     "contacts": {
-        "title": "Контакты",
-        "phone": ["Телефон", "+79829932579"],
-        "mail": ["Почта", "Ekaterina8matveeva@gmail.com"],
-        "city": ["Город", "Москва"]
+    "phone": ["Телефон", "+79829932579"],
+    "mail": ["Почта", "Ekaterina8matveeva@gmail.com"],
+    "city": ["Город", "Москва"]
     }
 }
