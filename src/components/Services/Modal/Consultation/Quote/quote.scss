@@ -1,0 +1,39 @@
+@use '/src/scss/index.scss' as *;
+
+.consultation__qoute {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 120%;
+    transform: translate3d(-10%,0,0);
+    background-color: var(--pink-color);
+
+    >blockquote {
+        display: flex;
+        flex-flow: column;
+        width: 80%;
+        height: 350px;
+        grid-gap: 1dvh;
+        align-items: center;
+        justify-content: center;
+        >h5 {
+            @include quote-font(var(--dark-color));
+            text-align: center;
+        }
+        >small {
+            width: 100%;
+            @include quote-font(var(--dark-color));
+            text-align: center;
+        }
+    }
+    >span {
+        position: absolute;
+        bottom: 15%;
+        width: 1px;
+        height: 30px;
+        background-color: var(--dark-color);
+        &:first-child {
+            top: 15%;
+        }
+    }
+}

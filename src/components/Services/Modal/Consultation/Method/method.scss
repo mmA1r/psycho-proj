@@ -1,0 +1,21 @@
+@use '/src/scss/index.scss' as *;
+
+.consultation__method {
+    width: 100%;
+    >article {
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+        width: 100%;
+    }
+    & p {
+        text-align: center;
+        line-height: 1.5;
+        @include text-font(var(--pink-color), 16px);
+    }
+}
+
+.method__title {
+    @include text-font(var(--purple-color), 28px);
+    text-align: center;
+}

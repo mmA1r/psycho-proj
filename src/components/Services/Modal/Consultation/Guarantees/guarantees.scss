@@ -1,0 +1,19 @@
+@use '/src/scss/index.scss' as *;
+
+.consultation__guarantee {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    border-radius: 13px;
+    backdrop-filter: blur(7px);
+    padding: 10px 0;
+    >h4 { @include text-font(var(--biege-color), 24px); }
+    >p {
+        width: 80%;
+        @include text-font(var(--biege-color), 18px, 200);
+        white-space: pre-line;
+        text-align: center;
+    }
+}
