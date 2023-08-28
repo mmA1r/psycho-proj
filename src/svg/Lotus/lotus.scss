@@ -1,4 +1,4 @@
-@import '/src/scss/mixins.scss';
+@use '/src/scss/index.scss' as *;
 
 @keyframes upper-petal {
     0% { transform: rotateZ(0) }
@@ -29,21 +29,16 @@
 #lotus { 
     @include svg(false);
     >path { will-change: transform; }
+
+    &.lotus_animated {
+        >.lotus__lower-petal { animation: bottom-petal 5s linear infinite; }
+        >.lotus__middle-petal { animation: middle-petal 5s linear infinite; }
+        >.lotus__upper-petal { animation: upper-petal 5s linear infinite; }
+        >.lotus-dots { animation: dots 5s linear infinite; }
+    }
 }
 
-.lotus__lower-petal  { 
-    fill: var(--gray-color);
-    animation: bottom-petal 5s linear infinite;
-}
-.lotus__middle-petal { 
-    fill: var(--purple-color);
-    animation: middle-petal 5s linear infinite;
-}
-.lotus__upper-petal  { 
-    fill: var(--pink-color);
-    animation: upper-petal 5s linear infinite;
-}
-.lotus-dots { 
-    fill: var(--biege-color);
-    animation: dots 5s linear infinite;
-}
+.lotus__lower-petal  { fill: var(--gray-color); }
+.lotus__middle-petal { fill: var(--purple-color); }
+.lotus__upper-petal  { fill: var(--pink-color); }
+.lotus-dots { fill: var(--biege-color); }

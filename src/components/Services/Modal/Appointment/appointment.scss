@@ -1,0 +1,48 @@
+@use '/src/scss/index.scss' as *;
+
+.nail-therapy__appointment {
+    position: relative;
+    width: 100%;
+    >p {
+        margin-top: 7px;
+        width: 100%;
+        text-align: center;
+        font-style: italic;
+        @include text-font(var(--biege-color), 14px);
+    }
+}
+
+.appointment__link {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 180px;
+    border-radius: 13px;
+    border: 2px solid var(--biege-color);
+    margin-top: 4dvh;
+    background-color: var(--half-biege-color);
+
+    >p {
+        color: var(--biege-color);
+        @include text-font(var(--biege-color), 20px);
+    }
+
+    >div {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--biege-color);
+        @include text-font(var(--biege-color), 24px);
+
+        >svg {
+            width: 40px;
+            height: 40px;
+            margin-left: 10%;
+        }
+    }
+}

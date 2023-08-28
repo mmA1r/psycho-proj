@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&family=Nunito+Sans:ital,wght@1,200&family=Roboto:wght@100;300&display=swap');
+
+/***  screen  ***/
+@mixin desktop-width {
+    @media screen and (width > 968px) {
+        @content;
+    }
+}
+
+@mixin tablet-width {
+    @media screen and (width > 420px) and (width <= 968px) {
+        @content;
+    }
+}
+
+@mixin phone-width {
+    @media screen and (width <= 420px){
+        @content;
+    }
+}
+
+// *** animations *** //
+@mixin interactive { transition: .7s; }
+
+/***  svg  ***/
+@mixin svg ($isPath: true) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    width: 100%;
+    height: 100%;
+
+    @if $isPath { >path { fill: currentColor; } }
+}

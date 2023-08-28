@@ -1,0 +1,46 @@
+.services__modal {
+    position: fixed;
+    top: 3dvh;
+    min-width: 100dvw;
+    min-height: 94dvh;
+    border: none;
+    padding: 5dvh 0;
+
+    background: var(--dark-gradient),
+    image-set(
+        url('/images/dialogBackground/dialog-background@1x.avif') type("image/avif") 1x,
+        url('/images/dialogBackground/dialog-background@2x.avif') type("image/avif") 2x,
+        url('/images/dialogBackground/dialog-background@1x.webp') type("image/webp") 1x,
+        url('/images/dialogBackground/dialog-background@2x.webp') type("image/webp") 2x,
+        url('/images/dialogBackground/dialog-background@1x.jpg') type("image/jpg") 1x,
+        url('/images/dialogBackground/dialog-background@2x.jpg') type("image/jpg") 2x,
+    );
+
+    &::backdrop {
+        background-color: #1d1e2cde;
+        backdrop-filter: blur(2.5px);
+    }
+
+    &.services__consultation { 
+        animation: left-side-sliding 1s ease-out; 
+        &.modal__closing { animation: right-side-sliding 1s ease-out reverse forwards; }
+    }
+    &.services__nail-therapy { 
+        animation: right-side-sliding 1s ease-out; 
+        &.modal__closing { animation: left-side-sliding 1s ease-out reverse forwards; }
+    }
+
+    overflow: hidden;
+    will-change: transform;
+}
+
+.modal__close-button {
+    position: fixed;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    color: var(--pink-color);
+
+    &.close-button_left { left: 5px; }
+    &.close-button_right { right: 5px; transform: rotateZ(180deg); }
+}

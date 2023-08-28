@@ -1,10 +1,10 @@
-@import '/src/scss/animations.scss';
-@import '/src/scss/mixins.scss';
+@use '/src/scss/index.scss' as *;
 
 .header {
     position: fixed;
     z-index: 100;
     width: 100%;
+    max-width: 100dvw;
     height: 50px;
 
     animation: headerShow .7s forwards;

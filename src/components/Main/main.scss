@@ -1,9 +1,8 @@
-@import '/src/scss/mixins.scss';
-@import '/src/scss/animations.scss';
+@use '/src/scss/index.scss' as *;
 
 .main {
     width: 100%;
-    height: 100%;
+    height: 101dvh;
     color: var(--purple-color);
 }
 

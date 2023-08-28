@@ -1,0 +1,57 @@
+@use '/src/scss/index.scss' as *;
+
+.nail-therapy__steps {
+    display: flex;
+    flex-flow: column;
+    gap: 5dvh;
+    width: 100%;
+    color: var(--biege-color);
+}
+
+.nail-therapy__step {
+    width: 100%;
+    height: auto;
+    > time {
+        display: inline-block;
+        @include text-font(var(--biege-color), 12px, 300);
+        width: 100%;
+        text-align: end;
+        padding-right: 20px;
+    }
+    transform: scale(.6);
+    opacity: .3;
+    transition: .7s linear;
+
+    &.step_appear { 
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.step__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    color: currentColor;
+    border: 1px solid currentColor;
+    border-radius: 13px;
+    backdrop-filter: blur(7px);
+    padding: 0 7%;
+
+    >p {
+        width: 60%;
+        @include text-font(var(--biege-color), 16px);
+    }
+
+    >div {
+        text-align: center;
+        line-height: 50px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        @include text-font(var(--biege-color), 18px);
+    }
+}

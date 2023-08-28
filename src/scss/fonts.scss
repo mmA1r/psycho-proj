@@ -1,0 +1,24 @@
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Nunito Sans', sans-serif; // quotes
+// font-family: 'Roboto', sans-serif;
+
+@mixin header-font (
+    $color: var(--biege-color),
+    $weight: 300
+) {
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin text-font (
+    $color: var(--biege-color),
+    $size: 18px,
+    $weight: 300
+) {
+    font-family: 'Roboto', sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}

@@ -1,4 +1,4 @@
-@import '/src/scss/mixins.scss';
+@use '/src/scss/index.scss' as *;
 
 .service__item {
     position: relative;
@@ -33,3 +33,4 @@
     &.service__nail-svg { right: 0; }
     &.service__consultation-svg { left: 0; transform: rotateZ(180deg); }
 }
+

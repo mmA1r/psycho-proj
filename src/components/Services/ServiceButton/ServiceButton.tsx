@@ -1,5 +1,5 @@
-import { useRef } from 'preact/hooks';
 import type { FunctionComponent } from 'preact';
+import { useRef } from 'preact/hooks';
 import { nailTherapy, consultation } from '../../../data/data.json';
 import './serviceButton.scss';
 
@@ -8,9 +8,9 @@ export enum ServiceTypes {
     consultation = 'consultation'
 }
 
-interface ServiceButton { type: ServiceTypes }
+interface ServiceButton { open: Function, type: ServiceTypes, } 
 
-const ServiceButton: FunctionComponent<ServiceButton> = ({ type }) => {
+const ServiceButton: FunctionComponent<ServiceButton> = ({ open, type }) => {
     const button = useRef<HTMLButtonElement>(null);
 
     const isNail = type === ServiceTypes.nail ? true : false;
@@ -20,12 +20,18 @@ const ServiceButton: FunctionComponent<ServiceButton> = ({ type }) => {
 
     const onSvgClick = () => button.current ? button.current.click() : null;
 
+    const onClickHandler = () => {
+        open();
+        document.body.classList.add('scroll-lock');
+    }
+
     return (
         <li class="service__item">
             <button
                 class={"service__button " + "service__" + classPrefix + "-button"}
                 type="button"
                 ref={button}
+                onClick={onClickHandler}
             >
                 <h3 class="service__sub-title">{ title }</h3>
                 { subTitle }
