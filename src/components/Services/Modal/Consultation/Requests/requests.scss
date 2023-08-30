@@ -1,5 +1,5 @@
 @use '/src/scss/index.scss' as *;
-.consultation__requests { min-height: 85dvh; justify-content: center; }
+.consultation__requests { min-height: 85dvh; justify-content: center; container-type: inline-size; }
 .consultation__requests, .consultation__guarantees {
     display: flex;
     flex-flow: column;
@@ -29,9 +29,15 @@
 }
 
 @for $i from 1 to 11 {
-    $delay: ($i - 1) * .2;
+    $delay: ($i - 1) * .15;
 
     .consultation__request:nth-child(#{$i}) {
         animation-delay: #{$delay}s;
+    }
+}
+
+@container ( width <= 275px ) {
+    .consultation__request {
+        font-size: 16px;
     }
 }

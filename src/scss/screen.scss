@@ -1,17 +1,11 @@
 @mixin desktop-width {
-    @media screen and (width > 968px) {
-        @content;
-    }
-}
-
-@mixin tablet-width {
-    @media screen and (width > 420px) and (width <= 968px) {
+    @media screen and (width > 512px) {
         @content;
     }
 }
 
 @mixin phone-width {
-    @media screen and (width <= 420px){
+    @media screen and (width <= 512px){
         @content;
     }
 }

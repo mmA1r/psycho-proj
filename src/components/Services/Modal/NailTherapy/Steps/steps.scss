@@ -21,7 +21,7 @@
     }
     transform: scale(.6);
     opacity: .3;
-    transition: .7s linear;
+    transition: .7s ease;
 
     &.step_appear { 
         transform: none;

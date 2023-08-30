@@ -2,7 +2,7 @@
 
 .parallax__elem_right {
     @include parallax(.1);
-    right: 5px;
+    right: 2dvw;
     width: 40px;
     height: 430px;
     &.parallax_upper {
@@ -18,8 +18,8 @@
 }
 
 .parallax__elem_left {
-    @include parallax(.5);
-    left: 87px;
+    @include parallax(.4);
+    left: 17dvw;
     width: 40px;
     height: 450px;
     &.parallax_upper {

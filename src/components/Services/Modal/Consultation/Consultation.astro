@@ -10,7 +10,7 @@ import { consultation } from '../../../../data/data.json';
 
 <div class="consultation-wrapper">
     <Requests client:visible />
-    <Guarantees client:visible />
+    <Guarantees client:only="preact" />
     <Quote client:visible />
     <Method client:visible/>
     <Appointment client:visible info={consultation.price} />

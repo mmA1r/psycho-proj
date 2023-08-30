@@ -15,4 +15,6 @@
         white-space: pre-line;
         text-align: center;
     }
+
+    &.appear { animation: appear .7s ease; }
 }
