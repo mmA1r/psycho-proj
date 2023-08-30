@@ -6,8 +6,7 @@
     margin-top: 4dvh;
     overflow: hidden;
     border-radius: 13px;
-    backdrop-filter: blur(7px);
-
+    background-color: var(--dark-color);
     &.slides_slided { 
         & article { transform: translate3d(-100%,0,0); }
         & svg { transform: rotateY(180deg) translate3d(175%,0,0); } 

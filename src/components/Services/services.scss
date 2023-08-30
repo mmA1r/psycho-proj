@@ -1,7 +1,8 @@
 @use '/src/scss/index.scss' as *;
 
 .services {
-    position: relative;
+    position: absolute;
+    top: 200dvh;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -21,7 +22,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    color: var(--gray-color)
+    color: var(--gray-color);
 }
 
 .services__title {

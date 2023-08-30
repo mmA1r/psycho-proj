@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { RightFrame, LeftFrame } from '../components/Parallax/Parallax';
 import Header from '../components/Header/Header';
 import Main from '../components/Main/Main';
 import About from '../components/About/About';
@@ -7,6 +8,7 @@ import Services from '../components/Services/Services';
 import Contacts from '../components/Contacts/Contacts';
 import NailTherapy from '../components/Services/Modal/NailTherapy/NailTherapy.astro';
 import Consultation from '../components/Services/Modal/Consultation/Consultation.astro';
+import Lotus from '../svg/Lotus/Lotus';
 import { name } from '../data/data.json';
 
 const title = name;
@@ -14,64 +16,35 @@ const title = name;
 
 <Layout title={title}>
     <div id="app">
-        <Header client:only="preact"/>
+        <LeftFrame type={1} />
+        <RightFrame type={1}/>
+        <Header client:visible/>
         <Main client:visible/>
         <About client:visible/>
         <Services client:visible>
             <NailTherapy slot="nail-threapy"/>
             <Consultation slot='consultation'/>
         </Services>
-        <Contacts client:visible/>
+        <Contacts client:visible>
+            <Lotus client:only="preact" slot="lotus"/>
+        </Contacts>
+        <LeftFrame type={2}/>
+        <RightFrame type={2}/>
     </div>
 </Layout>
 
-<style>
+<style lang="scss">
     #app {
         min-height: 100%;
         width: 100%;
         display: flex;
         flex-flow: column;
+
+        scroll-behavior: smooth;
+        overscroll-behavior: contain;
+        overflow: hidden;
+        overflow-y: auto;
+        perspective: 1px;
+        &, * { transform-style: preserve-3d; }
     }
 </style>
-
-<script>
-    const windowHeight = window.innerHeight;
-    let header = document.querySelector('.header');
-    let lotus = document.getElementById('lotus');
-    let oldScroll: number = 0;
-    let isChangeDirection: boolean = true;
-
-    const changeClass = (isAdd: boolean) => {
-        if(header) {
-            isAdd ? header.classList.add('header_hide') : header.classList.remove('header_hide');
-            isChangeDirection = !isChangeDirection 
-        }
-    }
-
-    const animateLotus = () => {
-        if (lotus) {
-            if (!lotus.classList.contains('lotus_animated')) {
-                if (lotus.getBoundingClientRect().top <= 1.3*windowHeight) {
-                    lotus.classList.add('lotus_animated');
-                }
-            } else {
-                if (lotus.getBoundingClientRect().top > 1.3*windowHeight) {
-                    lotus.classList.remove('lotus_animated');
-                }
-            }
-        }
-    }
-
-    const onScrollAnimations = () => {
-        const scrollY = window.scrollY;
-        // --- header --- //
-        if (!header) { header = document.querySelector('.header'); }
-        if ( scrollY >= oldScroll && isChangeDirection ) { changeClass(true); } 
-        if (scrollY < oldScroll && !isChangeDirection) { changeClass(false); }
-        oldScroll = scrollY;
-        // --- lotus --- //
-        if (!lotus) { lotus = document.getElementById('lotus'); }
-        animateLotus();
-    }
-
-    window.addEventListener('scroll', onScrollAnimations);

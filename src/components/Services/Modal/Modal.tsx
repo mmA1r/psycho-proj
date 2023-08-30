@@ -16,7 +16,7 @@ const Modal = forwardRef<HTMLDialogElement, Props>(({ type, children }, ref) => 
         setTimeout(() => {
             modal.current?.close();
             modal.current?.classList.remove('modal__closing');
-        }, 1000)
+        }, 700);
     };
     
     const isNail = type === ServiceTypes.nail ? true : false;

@@ -14,6 +14,7 @@
     > time {
         display: inline-block;
         @include text-font(var(--biege-color), 12px, 300);
+        color: currentColor;
         width: 100%;
         text-align: end;
         padding-right: 20px;
@@ -26,23 +27,28 @@
         transform: none;
         opacity: 1;
     }
+
+    &:nth-child(2) { color: var(--biege-color); >div>span { width: 33%; } }
+    &:nth-child(3) { color: var(--purple-color); >div>span { width: 66%; } }
+    &:nth-child(4) { color: var(--pink-color); >div>span { width: 97%; } }
 }
 
 .step__content {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 90px;
     color: currentColor;
-    border: 1px solid currentColor;
+    border: 2px solid currentColor;
     border-radius: 13px;
-    backdrop-filter: blur(7px);
     padding: 0 7%;
 
     >p {
         width: 60%;
         @include text-font(var(--biege-color), 16px);
+        color: currentColor;
     }
 
     >div {
@@ -50,8 +56,18 @@
         line-height: 50px;
         width: 50px;
         height: 50px;
-        border: 1px solid currentColor;
         border-radius: 50%;
+        border: 2px solid;
         @include text-font(var(--biege-color), 18px);
+        color: currentColor;
+    }
+    
+    >span {
+        position: absolute;
+        bottom: 0;
+        left: 5px;
+        height: 3px;
+        background-color: currentColor;
+        border-radius: 13px;
     }
 }

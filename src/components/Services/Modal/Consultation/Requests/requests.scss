@@ -1,5 +1,5 @@
 @use '/src/scss/index.scss' as *;
-
+.consultation__requests { min-height: 85dvh; justify-content: center; }
 .consultation__requests, .consultation__guarantees {
     display: flex;
     flex-flow: column;
@@ -21,7 +21,6 @@
     border-top: 1px solid var(--purple-color);
     border-bottom: 1px solid var(--purple-color);
     border-radius: 13px;
-    backdrop-filter: blur(7px);
     transform: scale(.7);
     opacity: 0;
 

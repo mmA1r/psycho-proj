@@ -10,12 +10,18 @@ const Introduction = () => {
                 <p>{ nailTherapy.typesTitle[1] }</p>
             </h3>
             <div class={"introduction__content"}>
-                <Picture type={1}/>
-                <Information type={[nailTherapy.types[0], nailTherapy.types[1]]}/>
-                <Picture type={2}/>
-                <Information type={[nailTherapy.types[2], nailTherapy.types[3]]}/>
-                <Picture type={3}/>
-                <Information type={[nailTherapy.types[4], nailTherapy.types[5]]}/>
+                <div>
+                    <Picture type={1}/>
+                    <Information type={[nailTherapy.types[0], nailTherapy.types[1]]}/>
+                </div>
+                <div>
+                    <Picture type={2}/>
+                    <Information type={[nailTherapy.types[2], nailTherapy.types[3]]}/>
+                </div>
+                <div>
+                    <Picture type={3}/>
+                    <Information type={[nailTherapy.types[4], nailTherapy.types[5]]}/>
+                </div>
             </div>
         </section>
 }

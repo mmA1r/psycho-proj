@@ -7,7 +7,6 @@
     align-items: center;
     width: 100%;
     border-radius: 13px;
-    backdrop-filter: blur(7px);
     padding: 10px 0;
     >h4 { @include text-font(var(--biege-color), 24px); }
     >p {

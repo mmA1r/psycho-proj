@@ -24,6 +24,7 @@ const Step: FunctionComponent<Step> = ({ time, title, index }) => {
         <div class={"step__content"}>
             <p>{ title }</p>
             <div>{ index+1 }</div>
+            <span/>
         </div>
     </div>
 }

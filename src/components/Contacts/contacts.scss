@@ -1,7 +1,7 @@
 @use '/src/scss/index.scss' as *;
 
 .contacts {
-    position: relative;
+    @include parallax(.1);
     display: flex;
     flex-flow: column;
     gap: 5%;
@@ -10,6 +10,8 @@
     width: 100%;
     height: 100dvh;
     padding: 7% 7%;
+
+    top: calc(200dvh + 430px);
 }
 
 .contacts__title {

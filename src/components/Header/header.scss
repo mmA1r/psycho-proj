@@ -1,17 +1,15 @@
 @use '/src/scss/index.scss' as *;
 
 .header {
-    position: fixed;
+    position: absolute;
+    inset: 0;
     z-index: 100;
     width: 100%;
     max-width: 100dvw;
     height: 50px;
 
     animation: headerShow .7s forwards;
-    will-change: transform;
 }
-
-.header_hide { animation: headerHide .7s forwards; }
 
 .header__navigation-menu {
     position: relative;
