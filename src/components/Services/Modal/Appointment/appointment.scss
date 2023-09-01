@@ -1,6 +1,6 @@
 @use '/src/scss/index.scss' as *;
 
-.nail-therapy__appointment {
+.appointment {
     position: relative;
     width: 100%;
     >p {
@@ -18,7 +18,6 @@
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
     height: 180px;
     border-radius: 13px;
     border: 2px solid var(--biege-color);
@@ -44,5 +43,14 @@
             height: 40px;
             margin-left: 10%;
         }
+    }
+
+    @include phone-width {
+        width: 100%;
+    }
+    @include desktop-width {
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

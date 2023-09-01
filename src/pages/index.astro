@@ -28,12 +28,14 @@ const title = name;
         <Contacts client:visible>
             <Lotus client:only="preact" slot="lotus"/>
         </Contacts>
-        <LeftFrame type={2}/>
-        <RightFrame type={2}/>
+        <LeftFrame client:visible client:media='(max-width: 725px)' type={2}/>
+        <RightFrame client:visible client:media='(max-width: 725px)' type={2}/>
     </div>
 </Layout>
 
 <style lang="scss">
+    @use '/src/scss/index.scss' as *;
+
     #app {
         min-height: 100%;
         width: 100%;
@@ -46,5 +48,7 @@ const title = name;
         overflow-y: auto;
         perspective: 1px;
         &, * { transform-style: preserve-3d; }
+        
+        @include scrollbar;
     }
 </style>

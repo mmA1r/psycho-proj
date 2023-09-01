@@ -12,7 +12,7 @@ const About = () => {
                 </div>
             </div>
             <a  tabIndex={0}
-                class="next-page-button main__anchor"
+                class="next-page-button about__anchor"
                 href="#services"
             > <NextPageArrow/> </a>
         </section>

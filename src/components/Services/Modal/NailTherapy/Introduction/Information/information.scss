@@ -4,17 +4,30 @@
     display: flex;
     flex-flow: column;
     min-height: 100%;
-    width: 80%;
-    animation: appear 1.2s ease;
+
+    @include phone-width {
+        width: 80%;
+        >p { &:first-child { border-bottom: 1px solid; } }
+    }
+
+    @include desktop-width {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(1px) brightness(.7);
+    }
+
     >p { 
-        @include text-font(var(--biege-color), clamp(14px, 2dvw, 18px));
         display: flex;
+        @include text-font(var(--biege-color), clamp(14px, 2dvw, 18px));
         align-items: center;
         justify-content: center;
         padding: 0 7px;
         height: 50%;
         width: 100%;
         text-align: center;
-        &:first-child { border-bottom: 1px solid; }
     }
+
+    animation: appear 1.2s ease;
 }

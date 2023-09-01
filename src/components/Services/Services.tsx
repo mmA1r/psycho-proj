@@ -15,17 +15,19 @@ const Services = (children: any) => {
 
     return (
         <section id="services" class="services">
+            <div class={"blur-block blur-block_left"} />
             <h2 class="services__title">{ servicesTitle }</h2>
             <nav class="servicers__navigation">
                 <ul class="servicers__navigation-list">
-                    <ServiceButton open={openNail} type={ ServiceTypes.nail }/>
                     <ServiceButton open={openConusltation} type={ ServiceTypes.consultation } />
+                    <ServiceButton open={openNail} type={ ServiceTypes.nail }/>
                 </ul>
             </nav>
             <a  tabIndex={0}
-                class="next-page-button main__anchor"
+                class="next-page-button services__anchor"
                 href="#contacts"
             > <NextPageArrow/> </a>
+            <div class={"blur-block blur-block_right"} />
             <Modal type={ServiceTypes.nail} children={children} ref={nailTherapy} />
             <Modal type={ServiceTypes.consultation} children={children}  ref={consultation} />
         </section>

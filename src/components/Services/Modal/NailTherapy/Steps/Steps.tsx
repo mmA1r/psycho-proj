@@ -33,7 +33,9 @@ const Steps = () => {
     const steps = nailTherapy.practice.map((item, index) => <Step time={item.time} title={item.title} index={index}/>);
     return <section class={"nail-therapy__steps"}>
         <h3 class={"introduction__title"}>{ nailTherapy.practiceTitle }</h3>
-        { steps }
+        <div>
+            { steps }
+        </div>
     </section>
 }
 

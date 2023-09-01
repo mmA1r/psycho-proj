@@ -12,6 +12,12 @@
     padding: 7% 7%;
 
     top: calc(200dvh + 430px);
+
+    @include desktop-width {
+        top: 170dvh;
+        justify-content: space-around;
+        padding: 5% 7%;
+    }
 }
 
 .contacts__title {
@@ -19,9 +25,28 @@
 }
 
 .contacts__information {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
     position: relative;
     width: 100%;
     height: 40%;
+    container-type: inline-size;
+}
+
+@container ( width <= 390px ) {
+    .contacts__text { font-size: 4dvw !important; }
+}
+
+@container ( width >= 800px ) {
+    .contacts__text {
+        grid-template-columns: 40% 50% !important;
+        >:nth-child(odd) {
+            text-align: end;
+            padding-right: 2dvw;
+        }
+        font-size: 20px !important;
+    }
 }
 
 .contacts__text {

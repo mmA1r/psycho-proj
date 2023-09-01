@@ -8,6 +8,7 @@
     width: 100%;
     border-radius: 13px;
     padding: 10px 0;
+
     >h4 { @include text-font(var(--biege-color), 24px); }
     >p {
         width: 80%;

@@ -1,11 +1,11 @@
 @mixin desktop-width {
-    @media screen and (width > 512px) {
+    @media screen and (width > 725px) {
         @content;
     }
 }
 
 @mixin phone-width {
-    @media screen and (width <= 512px){
+    @media screen and (width <= 725px){
         @content;
     }
 }
@@ -23,4 +23,18 @@
     height: 100%;
 
     @if $isPath { >path { fill: currentColor; } }
+}
+
+@mixin scrollbar {
+    @include desktop-width {
+        &::-webkit-scrollbar { width: 4px; }
+        &::-webkit-scrollbar-thumb {
+            background: var(--purple-color);
+            border-radius: 13px;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        scrollbar-color: transparent black;
+    }
 }

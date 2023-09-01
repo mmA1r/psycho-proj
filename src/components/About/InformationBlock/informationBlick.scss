@@ -25,6 +25,10 @@
 
     &.bio-sub-title { align-self: flex-end; }
     &.education-sub-title { align-self: flex-start; }
+    @include desktop-width { 
+        font-size: 22px;
+        margin: 0 22px;
+    }
 }
 
 .about__header {
@@ -36,9 +40,18 @@
 }
 
 @container ( width <= 275px ) {
-    .about__title {
-        font-size: 24px !important;
+    .about__title { font-size: 24px !important; }
+}
+
+@container ( width >= 725px ) {
+    .about__title { 
+        font-size: 32px !important; 
+        height: 120px; 
+        display: flex;
+        justify-content: center;
+        align-items: center; 
     }
+    .about__change-slide { width: 70px !important; height: 45px !important; }
 }
 
 .about__title {
@@ -67,4 +80,15 @@
     padding: 4px 0;
     &.paragraph_bio { text-align: center; }
     &.paragraph_ed { text-align: left; }
+
+    @include desktop-width { font-size: 18px; }
+}
+
+.about__text-wrapper {
+    @include desktop-width {
+        flex: auto;
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+    }
 }

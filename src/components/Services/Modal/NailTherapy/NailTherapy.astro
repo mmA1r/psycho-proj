@@ -14,7 +14,9 @@ import { nailTherapy } from '../../../../data/data.json';
     <Appointment client:visible info={nailTherapy.price}/>
 </div>
 
-<style>
+<style lang="scss">
+    @use '/src/scss/index.scss' as *;
+    
     .nail-therapy-wrapper {
         display: flex;
         flex-flow: column;
@@ -25,5 +27,6 @@ import { nailTherapy } from '../../../../data/data.json';
         overflow-y: auto;
         scroll-behavior: smooth;
         overscroll-behavior: contain;
+        @include scrollbar;
     }
 </style>

@@ -6,7 +6,7 @@ interface Appointment {
 }
 
 const Appointment: FunctionComponent<Appointment> = ({ info }) => {
-    return <section class={"nail-therapy__appointment"}>
+    return <section class={"appointment"}>
         <h3 class={"introduction__title"}>{ info[0] }</h3>
         <p>{ info[1] }</p>
         <a class={"appointment__link"} href={"https://t.me/ekaterina8matveeva"}>

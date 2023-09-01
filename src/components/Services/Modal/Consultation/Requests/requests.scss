@@ -1,5 +1,4 @@
 @use '/src/scss/index.scss' as *;
-.consultation__requests { min-height: 85dvh; justify-content: center; container-type: inline-size; }
 .consultation__requests, .consultation__guarantees {
     display: flex;
     flex-flow: column;
@@ -7,10 +6,35 @@
     width: 100%;
     >ul {
         display: flex;
-        flex-flow: column;
+        @include phone-width { flex-flow: column; }
         gap: 3dvh;
         width: 100%;
     }
+}
+
+.consultation__requests { 
+    align-items: center;
+    @include phone-width {
+        justify-content: center;
+        min-height: 85dvh; 
+    }
+
+    @include desktop-width {
+        padding: 5dvh 0;
+        justify-content: start; 
+        >ul {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            align-items: center;
+            >li {
+                width: 325px;
+                &:nth-child(odd) { justify-self: self-start; }
+                &:nth-child(even) { justify-self: self-end; }
+                &:first-child { grid-column: span 2; justify-self: center }
+            }
+        }
+    }
+    container-type: inline-size;
 }
 
 .consultation__request {

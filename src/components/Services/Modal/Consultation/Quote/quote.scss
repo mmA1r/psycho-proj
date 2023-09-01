@@ -4,6 +4,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-self: flex-start;
     width: 120%;
     transform: translate3d(-10%,0,0);
     background-color: var(--pink-color);
@@ -16,14 +17,11 @@
         grid-gap: 1dvh;
         align-items: center;
         justify-content: center;
-        >h5 {
-            @include quote-font(var(--dark-color));
-            text-align: center;
-        }
-        >small {
+        >h5, small {
             width: 100%;
-            @include quote-font(var(--dark-color));
             text-align: center;
+            @include phone-width { @include quote-font(var(--dark-color)); }
+            @include desktop-width { @include quote-font(var(--dark-color), 16px); }
         }
     }
     >span {

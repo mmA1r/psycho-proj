@@ -18,8 +18,8 @@
 }
 
 .parallax__elem_left {
-    @include parallax(.4);
-    left: 17dvw;
+    @include parallax(.5);
+    left: 21.5dvw;
     width: 40px;
     height: 450px;
     &.parallax_upper {
@@ -31,4 +31,8 @@
         color: var(--gray-color);
         bottom: -170dvh;
     }
+}
+
+.parallax__elem_left, .parallax__elem_right {
+    @include desktop-width { display: none; }
 }

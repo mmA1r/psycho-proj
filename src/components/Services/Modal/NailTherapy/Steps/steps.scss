@@ -6,10 +6,22 @@
     gap: 5dvh;
     width: 100%;
     color: var(--biege-color);
+    >div {
+        display: flex;
+        width: 100%;
+        @include desktop-width {
+            gap: 5dvw;
+            padding: 0 7%;
+        }
+        @include phone-width {
+            gap: 5dvh;
+            flex-flow: column;
+        }
+    }
 }
 
 .nail-therapy__step {
-    width: 100%;
+    width: 100%; 
     height: auto;
     > time {
         display: inline-block;
@@ -28,9 +40,9 @@
         opacity: 1;
     }
 
-    &:nth-child(2) { color: var(--biege-color); >div>span { width: 33%; } }
-    &:nth-child(3) { color: var(--purple-color); >div>span { width: 66%; } }
-    &:nth-child(4) { color: var(--pink-color); >div>span { width: 97%; } }
+    &:nth-child(1) { color: var(--biege-color); >div>span { width: 33%; } }
+    &:nth-child(2) { color: var(--purple-color); >div>span { width: 66%; } }
+    &:nth-child(3) { color: var(--pink-color); >div>span { width: 97%; } }
 }
 
 .step__content {
@@ -43,7 +55,7 @@
     color: currentColor;
     border: 2px solid currentColor;
     border-radius: 13px;
-    padding: 0 7%;
+    padding: 0 5%;
 
     >p {
         width: 60%;
@@ -69,5 +81,13 @@
         height: 3px;
         background-color: currentColor;
         border-radius: 13px;
+    }
+
+    container-type: inline-size;
+}
+
+@container ( width <= 260px ) {
+    p {
+        font-size: 14px !important;
     }
 }
