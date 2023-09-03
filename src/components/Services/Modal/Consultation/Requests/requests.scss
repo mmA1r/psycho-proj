@@ -45,10 +45,12 @@
     border-top: 1px solid var(--purple-color);
     border-bottom: 1px solid var(--purple-color);
     border-radius: 13px;
-    transform: scale(.7);
-    opacity: 0;
-
-    animation: appear2 .7s ease forwards;
+    @include phone-width { animation: appear .7s ease-in; }
+    @include desktop-width {
+        transform: scale(.7);
+        opacity: 0;
+        animation: appear2 .7s ease forwards;
+    }
     @include text-font;
 }
 
@@ -56,7 +58,7 @@
     $delay: ($i - 1) * .15;
 
     .consultation__request:nth-child(#{$i}) {
-        animation-delay: #{$delay}s;
+        @include desktop-width { animation-delay: #{$delay}s; }
     }
 }
 

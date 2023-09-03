@@ -29,15 +29,14 @@
     height: 100%;
     border: 4px solid var(--gray-color);
     border-radius: 3px;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 4px currentColor;
     font-style: italic;
     padding: 0 5%;
 
     @include text-font(currentColor);
     @include outline(var(--dark-color));
-
+    box-shadow: 0 0 4px currentColor;
     @include desktop-width {
+        backdrop-filter: blur(3px);
         &::before {
             @include interactive;
             position: absolute;

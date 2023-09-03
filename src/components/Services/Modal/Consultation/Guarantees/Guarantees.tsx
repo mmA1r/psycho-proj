@@ -1,5 +1,3 @@
-import { useEffect } from 'preact/hooks';
-import { useObserver } from 'preact-intersection-observer';
 import type { FunctionComponent } from 'preact';
 import { consultation } from '../../../../../data/data.json';
 
@@ -8,14 +6,8 @@ import './guarantees.scss';
 interface Guarantee { header: string, text: string }
 
 const Guarantee: FunctionComponent<Guarantee> = ({ header, text }) => {
-    const [ ref, inView, entry ] = useObserver<HTMLLIElement>();
-
-    useEffect(() => {
-        if (inView) { entry.target.classList.add('appear') };
-    });
-
     return (
-        <li ref={ref} class={"consultation__guarantee"}>
+        <li class={"consultation__guarantee"}>
             <h4>{ header }</h4>
             <p>{ text }</p>
         </li>

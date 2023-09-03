@@ -23,6 +23,7 @@
         gap: 10dvw;
         align-items: center;
         height: 100%;
+        padding: 0 15px;
     }
     @include desktop-width {
         flex-flow: column;

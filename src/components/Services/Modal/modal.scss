@@ -8,16 +8,16 @@
     padding: 5dvh 0;
     border: none;
 
-    @include phone-width { }
-
-    @include desktop-width {}
+    @include desktop-width {
+        &::backdrop {
+            background-color: #1d1e2cde;
+            backdrop-filter: blur(3px);
+        }
+    }
 
     background: transparent;
 
-    &::backdrop {
-        background-color: #1d1e2cde;
-        backdrop-filter: blur(3px);
-    }
+    &::backdrop { background-color: #1d1e2cde; }
 
     &.services__consultation { 
         animation: left-side-sliding .7s ease-out; 
@@ -36,7 +36,7 @@
     position: fixed;
     color: var(--pink-color);
     @include phone-width {
-        top: 5px;
+        top: -5px;
         width: 40px;
         height: 40px;
 

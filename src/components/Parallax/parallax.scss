@@ -1,35 +1,37 @@
 @use '/src/scss/index.scss' as *;
 
 .parallax__elem_right {
-    @include parallax(.1);
-    right: 2dvw;
-    width: 40px;
-    height: 430px;
-    &.parallax_upper {
-        top: 20dvh;
-        color: var(--dark-color);
-        filter: blur(1px) drop-shadow(-1px 0px 3px var(--dark-color));
-    }
-    &.parallax_lower {
+    @include phone-width {
+        @include parallax(.1);
+        right: 2dvw;
+        width: 40px;
+        height: 430px;
+        &.parallax_upper {
+            top: 20dvh;
+            color: var(--dark-color);
+        }
+        &.parallax_lower {
 
-        color: var(--gray-color);
-        bottom: -170dvh;
+            color: var(--gray-color);
+            bottom: -170dvh;
+        }
     }
 }
 
 .parallax__elem_left {
-    @include parallax(.5);
-    left: 21.5dvw;
-    width: 40px;
-    height: 450px;
-    &.parallax_upper {
-        top: 30dvh;
-        color: var(--dark-color);
-        filter: blur(1px) drop-shadow(-1px 0px 3px var(--dark-color));
-    }
-    &.parallax_lower { 
-        color: var(--gray-color);
-        bottom: -170dvh;
+    @include phone-width {
+        @include parallax(.5);
+        left: 21.5dvw;
+        width: 40px;
+        height: 450px;
+        &.parallax_upper {
+            top: 30dvh;
+            color: var(--dark-color);
+        }
+        &.parallax_lower { 
+            color: var(--gray-color);
+            bottom: -170dvh;
+        }
     }
 }
 
