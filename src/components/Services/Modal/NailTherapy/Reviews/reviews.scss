@@ -30,17 +30,21 @@
 }
 
 .reviews__slide {
-    height: 100%;
+    min-height: 100%;
     @include phone-width {
         width: 100%;
     }
     @include desktop-width {
-        width: 30%;
+        display: flex;
+        flex-flow: column;
+        width: clamp(320px, 30%, 520px);
         >p {
             border-bottom-left-radius: 13px;
             border-bottom-right-radius: 13px;
             border: 1px solid var(--pink-color);
             border-top: none;
+            line-height: 1.5em;
+            flex-grow: 1;
         }
     }
     >header {

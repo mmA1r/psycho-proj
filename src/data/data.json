@@ -100,9 +100,21 @@
     },
 
     "contactsTitle": "Контакты",
+    "mediaSubTitle": "Медиа",
+    "therapySignInTitle": "Записаться на терапию",
     "contacts": {
-    "phone": ["Телефон", "+79829932579"],
-    "mail": ["Почта", "Ekaterina8matveeva@gmail.com"],
-    "city": ["Город", "Москва"]
+        "phone": ["Телефон", "+79829932579"],
+        "mail": ["Почта", "Ekaterina8matveeva@gmail.com"],
+        "city": ["Город", "Москва"]
+    },
+    "links": {
+        "media": {
+            "telegram": "https://t.me/es8matveeva",
+            "youTube": "https://youtube.com/@ekaterina8matveeva"
+        },
+        "therapy": {
+            "telegram": "https://t.me/ekaterina8matveeva",
+            "whatsapp": "https://wa.me/79829932579"
+        }
     }
 }

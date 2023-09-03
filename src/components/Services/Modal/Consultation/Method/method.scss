@@ -25,7 +25,7 @@
             width: 50%;
             height: 360px;
             >img {
-                border: 5px solid var(--biege-color);
+                border: 5px solid var(--pink-color);
                 max-width: 100%;
                 max-height: 100%;
                 background-repeat: no-repeat;
@@ -43,6 +43,6 @@
 }
 
 .method__title {
-    @include text-font(var(--purple-color), 28px);
+    @include text-font(var(--pink-color), 28px);
     text-align: center;
 }

@@ -48,7 +48,21 @@
         top: 0;
         width: 50px;
         height: 50px;
-        &.close-button_left { left: 5%; }
-        &.close-button_right { right: 5%; transform: rotateZ(180deg); }
+        @include interactive;
+        &.close-button_left { 
+            left: 5%;
+            &:hover {
+                color: var(--biege-color);
+                animation: side-to-side_no-rotate .7s ease;
+            }
+        }
+        &.close-button_right { 
+            right: 5%; 
+            transform: rotateZ(180deg); 
+            &:hover {
+                color: var(--biege-color);
+                animation: side-to-side .7s ease;
+            }
+        }
     }
 }

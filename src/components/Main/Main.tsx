@@ -3,7 +3,7 @@ import NextPageArrow from '../../svg/NextPageArrow/NextPageArrow';
 import './main.scss';
 
 const Main = () => {
-    
+
     return (
         <section class="main">
             <div class="main__image">

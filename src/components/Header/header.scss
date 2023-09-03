@@ -26,8 +26,10 @@
     }
     @include desktop-width {
         flex-flow: column;
-        padding: 10px 20px;
+        padding-left: 30px;
+        padding-top: 30px;
         height: 75%;
+        gap: 20px;
     }
     justify-content: center;
     width: 100%;

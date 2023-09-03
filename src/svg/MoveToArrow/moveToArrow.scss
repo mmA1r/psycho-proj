@@ -8,6 +8,6 @@
     @include svg(false);
 
     >.move-to-arrow__common-elems { fill: currentColor; }
-    .move-to-arrow__stop { stop-color: currentColor; }
-    .move-to-arrow__stop_opacity { stop-opacity: 0; }
+    & .move-to-arrow__stop { stop-color: var(--pink-color); }
+    & .move-to-arrow__stop_opacity { stop-opacity: 0; }
 }

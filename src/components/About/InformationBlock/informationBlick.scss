@@ -51,7 +51,10 @@
         justify-content: center;
         align-items: center; 
     }
-    .about__change-slide { width: 70px !important; height: 45px !important; }
+    .about__change-slide { 
+        width: 70px !important; 
+        height: 45px !important; 
+    }
 }
 
 .about__title {
@@ -67,6 +70,15 @@
 
     &.bio-button { right: 0; }
     &.education-button { left: 0; }
+
+    @include desktop-width {
+        @include interactive;
+        &:hover {
+            color: var(--biege-color);
+            &.bio-button { animation: side-to-side_no-rotate .7s linear; }
+            &.education-button { animation: side-to-side_no-rotate .7s linear; }
+        }
+    }
 }
 
 .move-to-arrow_reused {
@@ -81,7 +93,9 @@
     &.paragraph_bio { text-align: center; }
     &.paragraph_ed { text-align: left; }
 
-    @include desktop-width { font-size: 18px; }
+    @include desktop-width { 
+        font-size: 18px; 
+    }
 }
 
 .about__text-wrapper {
@@ -90,5 +104,6 @@
         display: flex;
         flex-flow: column;
         gap: 10px;
+        padding: 0 2dvw;
     }
 }

@@ -20,6 +20,11 @@
     @include text-font;
     @include desktop-width {
         font-size: 20px;
+        @include interactive;
+        &:hover {
+            transform: translateX(5%);
+            >svg { animation: up-down .7s linear; }
+        }
     }
 }
 

@@ -18,8 +18,6 @@ const ServiceButton: FunctionComponent<ServiceButton> = ({ open, type }) => {
     const subTitle = isNail ? nailTherapy.title[1] : consultation.title[1];
     const classPrefix = isNail ? 'nail' : 'consultation';
 
-    const onSvgClick = () => button.current ? button.current.click() : null;
-
     const onClickHandler = () => {
         open();
         document.body.classList.add('scroll-lock');
@@ -36,7 +34,7 @@ const ServiceButton: FunctionComponent<ServiceButton> = ({ open, type }) => {
                 <h3 class="service__sub-title">{ title }</h3>
                 { subTitle }
             </button>
-            <svg onClick={onSvgClick} class={"service-button-svg " + "service__" + classPrefix + "-svg"}><use xlinkHref="#move-to-arrow"></use></svg>
+            <svg class={"service-button-svg " + "service__" + classPrefix + "-svg"}><use xlinkHref="#move-to-arrow"></use></svg>
         </li>
     );
 }

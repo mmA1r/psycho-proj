@@ -11,7 +11,7 @@
 }
 
 // *** animations *** //
-@mixin interactive { transition: .7s; }
+@mixin interactive { transition: .7s ease; }
 
 /***  svg  ***/
 @mixin svg ($isPath: true) {
@@ -26,15 +26,16 @@
 }
 
 @mixin scrollbar {
-    @include desktop-width {
-        &::-webkit-scrollbar { width: 4px; }
-        &::-webkit-scrollbar-thumb {
-            background: var(--purple-color);
-            border-radius: 13px;
-        }
-        &::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        scrollbar-color: transparent black;
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--purple-color);
+        border-radius: 13px;
     }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    scrollbar-color: transparent var(--purple-color);
+
+    @include desktop-width { &::-webkit-scrollbar { width: 4px; } }
+    @include phone-width { &::-webkit-scrollbar { width: 3px; } }
 }

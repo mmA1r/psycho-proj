@@ -1,5 +1,5 @@
 import { contacts, contactsTitle } from '../../data/data.json';
-import LinksList from './LinksList/LinksList';
+import Links from './LinksList/Links'; 
 import './contacts.scss';
 
 const Contacts = (props:any) => {
@@ -15,8 +15,9 @@ const Contacts = (props:any) => {
                 <div className="contacts__text">
                     { text }
                 </div>
-                <LinksList/>
             </address>
+            <Links type={1} />
+            <Links type={2} />
             <div class="contacts__svg-wrapper">
                 { props.lotus }
             </div>

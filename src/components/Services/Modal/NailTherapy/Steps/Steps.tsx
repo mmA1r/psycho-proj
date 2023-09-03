@@ -15,11 +15,14 @@ const Step: FunctionComponent<Step> = ({ time, title, index }) => {
 
     useEffect(() => {
         if ( inView ) { entry.target.classList.add('step_appear') }
-    })
+    });
+
+    const increaseSize = () => entry.target.classList.add('increased');
+    const decreaseSize = () => entry.target.classList.remove('increased');
 
     const [ minutes ] = time.split(/\D/);
 
-    return <div ref={ref} class={"nail-therapy__step"}>
+    return <div onMouseEnter={increaseSize} onMouseLeave={decreaseSize} ref={ref} class={"nail-therapy__step"}>
         <time dateTime={`00:${minutes}`}>{ time }</time>
         <div class={"step__content"}>
             <p>{ title }</p>

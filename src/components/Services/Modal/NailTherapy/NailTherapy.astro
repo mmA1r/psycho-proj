@@ -11,7 +11,7 @@ import { nailTherapy } from '../../../../data/data.json';
     <Introduction client:visible />
     <Steps client:only="preact" />
     <Reviews client:visible />
-    <Appointment client:visible info={nailTherapy.price}/>
+    <Appointment client:visible info={nailTherapy.price} type={2}/>
 </div>
 
 <style lang="scss">

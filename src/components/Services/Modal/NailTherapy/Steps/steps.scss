@@ -39,10 +39,13 @@
         transform: none;
         opacity: 1;
     }
-
+    @include interactive;
     &:nth-child(1) { color: var(--biege-color); >div>span { width: 33%; } }
     &:nth-child(2) { color: var(--purple-color); >div>span { width: 66%; } }
     &:nth-child(3) { color: var(--pink-color); >div>span { width: 97%; } }
+
+    &.increased { transform: scale(1.03); }
+    cursor: default;
 }
 
 .step__content {

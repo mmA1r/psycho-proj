@@ -2,14 +2,17 @@
 
 .appointment {
     position: relative;
+    padding: 20px;
+    color: var(--pink-color);
     width: 100%;
     >p {
         margin-top: 7px;
         width: 100%;
         text-align: center;
         font-style: italic;
-        @include text-font(var(--biege-color), 14px);
+        @include text-font(currentColor, 14px);
     }
+    >h3 { color: currentColor; }
 }
 
 .appointment__link {
@@ -19,15 +22,17 @@
     justify-content: space-around;
     align-items: center;
     height: 180px;
-    border-radius: 13px;
-    border: 2px solid var(--biege-color);
     margin-top: 4dvh;
-    background-color: var(--half-biege-color);
 
-    >p {
-        color: var(--biege-color);
-        @include text-font(var(--biege-color), 20px);
-    }
+    color: currentColor;
+
+    border: 4px solid currentColor;
+    border-radius: 13px;
+
+    box-shadow: 0 0 5px currentColor;
+    backdrop-filter: blur(7px);
+
+    >p { @include text-font(currentColor, 20px); }
 
     >div {
         width: 100%;
@@ -35,13 +40,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: var(--biege-color);
-        @include text-font(var(--biege-color), 24px);
+        @include text-font(currentColor, 28px, 800);
 
         >svg {
             width: 40px;
             height: 40px;
-            margin-left: 10%;
+            margin-left: 5%;
+            margin-top: 1%;
+        }
+    }
+
+    &.link__consultation {
+        >div {
+            flex-direction: row-reverse;
+            >svg {
+                transform: rotateZ(180deg);
+                margin-right: 5%;
+                margin-bottom: 1%;
+                margin-left: 0;
+            }
         }
     }
 
@@ -49,8 +66,30 @@
         width: 100%;
     }
     @include desktop-width {
-        width: 30%;
+        width: clamp(420px, 30%, 700px);
         margin-left: auto;
         margin-right: auto;
+        transition: .5s ease-in-out;
+        &::before {
+            transition: .5s ease-in-out;
+            display: block;
+            z-index: -100;
+            content: '';
+            position: absolute;
+            height: 105%;
+            width: 0;
+            border-radius: 13px;
+            background-color: var(--biege-color);
+            opacity: .9;
+        }
+        &:hover {
+            &::before {
+                width: 100%;
+            }
+            color: var(--gray-color);
+            transform: scale(1.05);
+            &.link__consultation { svg { animation: side-to-side .7s ease; } }
+            &.link__nail { svg { animation: side-to-side_no-rotate .7s ease; } }
+        }
     }
 }

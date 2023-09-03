@@ -47,6 +47,9 @@
 
 .services__title {
     @include header-font(var(--gray-color));
+    @include desktop-width {
+        font-size: 34px;
+    }
 }
 
 .servicers__navigation {
