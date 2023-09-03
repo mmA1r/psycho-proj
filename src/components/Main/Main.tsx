@@ -6,7 +6,7 @@ const Main = () => {
 
     return (
         <section class="main">
-            <div class="main__image">
+            <div title={"Екатерина Матвеева"} class="main__image">
                 <h1 class="main__title">{ name }</h1>
                 <h1 class="main__title">{ maintitle[0] }</h1>
                 <h1 class="main__title">{ maintitle[1] }</h1>
@@ -14,6 +14,7 @@ const Main = () => {
             <a  tabIndex={0}
                 class="next-page-button main__anchor"
                 href="#about"
+                aria-label={"Страница обо мне"}
             > <NextPageArrow/> </a>
         </section>
     );

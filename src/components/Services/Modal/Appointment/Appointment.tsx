@@ -12,7 +12,7 @@ const Appointment: FunctionComponent<Appointment> = ({ info, type }) => {
     return <section class={"appointment"}>
         <h3 class={"introduction__title"}>{ info[0] }</h3>
         <p>{ info[1] }</p>
-        <a class={"appointment__link " + classAdd} href={links.therapy.telegram}>
+        <a aria-label={'Ссылка на телеграм'} class={"appointment__link " + classAdd} href={links.therapy.telegram}>
             <p>{ info[2] }</p>
             <p>{ info[3] }</p>
             <div>

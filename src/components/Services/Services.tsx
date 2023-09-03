@@ -26,6 +26,7 @@ const Services = (children: any) => {
             <a  tabIndex={0}
                 class="next-page-button services__anchor"
                 href="#contacts"
+                aria-label={"Страница контакты"}
             > <NextPageArrow/> </a>
             <div class={"blur-block blur-block_right"} />
             <Modal type={ServiceTypes.nail} children={children} ref={nailTherapy} />

@@ -35,6 +35,7 @@ const InformationBlock: FunctionComponent<InformationBlock> = ({ type }) => {
         <MoveToArrow isTrace={true} viewBox='0 0 40 30'/> :
         <svg class="move-to-arrow_reused"><use xlinkHref="#move-to-arrow_shaded"></use></svg>;
     const text = paragraphs.map((paragraph, index) => <p key={index} class={"about__paragraph " + `${ isBio ? 'paragraph_bio' : 'paragraph_ed' }`}>{ paragraph }</p>);
+    const label = isBio ? 'Образование' : 'О себе';
 
     return (
         <article class="about__information-block">
@@ -45,6 +46,7 @@ const InformationBlock: FunctionComponent<InformationBlock> = ({ type }) => {
                     class={`about__change-slide ${ name }-button`}
                     onClick={onClickHandler}
                     tabIndex={index}
+                    aria-label={label}
                 > { isReuse } </button>
             </header>
             <div class="about__text-wrapper">

@@ -1,4 +1,5 @@
 import type { FunctionComponent } from 'preact';
+import type { JSXInternal } from 'preact/src/jsx';
 import { therapySignInTitle, mediaSubTitle, links } from '../../../data/data.json';
 import Telegram from '../../../svg/Telegram/Telegram';
 import Whatsapp from '../../../svg/Whatsapp/Whatsapp';
@@ -12,15 +13,16 @@ const Links: FunctionComponent<Links> = ({ type }) => {
     const title =  type === 1 ? mediaSubTitle : therapySignInTitle;
     const types = type === 1 ? links.media : links.therapy;
 
-    const svg = [ <Telegram />, type === 1 ? <YouTube /> : <Whatsapp /> ];
+    const svg: [string, JSXInternal.Element][] = [ ['Ссылка на telegram', <Telegram />], type === 1 ?['Ссылка на youtube', <YouTube />] : ['Ссылка на whatsapp', <Whatsapp />] ];
 
     const items = Object.values(types).map((type, index) =>
         <li class={"links-list__item"}>
             <a
+                aria-label={svg[index][0]}
                 class={"contacts-links__link"}
                 href={type}
             >
-                { svg[index] }
+                { svg[index][1] }
             </a>
         </li>
     );

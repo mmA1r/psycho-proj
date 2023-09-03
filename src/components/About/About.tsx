@@ -14,6 +14,7 @@ const About = () => {
             <a  tabIndex={0}
                 class="next-page-button about__anchor"
                 href="#services"
+                aria-label={"Страница услуги"}
             > <NextPageArrow/> </a>
         </section>
     );
