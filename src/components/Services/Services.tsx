@@ -13,8 +13,45 @@ const Services = (children: any) => {
     const openNail = () => nailTherapy.current?.showModal();
     const openConusltation = () => consultation.current?.showModal();
 
+    const image = <picture class={"services__image"}>
+        <source 
+            srcset="/images/backgroundServeices/background-services_phone@1x.avif 1x,
+                    /images/backgroundServeices/background-services_phone@2x_desktop@1x.avif 2x"
+            type={"image/avif"}
+            media={"(max-width: 725px)"}
+        />
+        <source 
+            srcset="/images/backgroundServeices/background-services_phone@1x.webp 1x,
+                    /images/backgroundServeices/background-services_phone@2x_desktop@1x.webp 2x"
+            type={"image/webp"}
+            media={"(max-width: 725px)"}
+        />
+        <source 
+            srcset="/images/backgroundServeices/background-services_phone@1x.jpg 1x,
+                    /images/backgroundServeices/background-services_phone@2x_desktop@1x.jpg 2x"
+            type={"image/jpg"}
+            media={"(max-width: 725px)"}
+        />
+        <source 
+            srcset="/images/backgroundServeices/background-services_phone@2x_desktop@1x.avif 1x,
+                    /images/backgroundServeices/background-services_desktop@2x.avif 2x"
+            type={"image/avif"}
+        />
+        <source 
+            srcset="/images/backgroundServeices/background-services_phone@2x_desktop@1x.webp 1x,
+                    /images/backgroundServeices/background-services_desktop@2x.webp 2x"
+            type={"image/webp"}
+        />
+        <img
+            src="/images/backgroundServeices/background-services_phone@2x_desktop@1x.jpg"
+            srcset="/images/backgroundServeices/background-services_desktop@2x.jpg 2x"
+            alt={"Фон услуги"}
+        />
+    </picture>
+
     return (
         <section id="services" class="services">
+            { image }
             <div class={"blur-block blur-block_left"} />
             <h2 class="services__title">{ servicesTitle }</h2>
             <nav class="servicers__navigation">

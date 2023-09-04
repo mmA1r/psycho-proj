@@ -46,13 +46,13 @@ const title = name;
         overscroll-behavior: contain;
         overflow: hidden;
         overflow-y: auto;
-        perspective: 1px;
-        &, * { transform-style: preserve-3d; }
+
+        @media (-webkit-transform-3d) {
+            perspective: 1px;
+            &, * { transform-style: preserve-3d; }
+        }
         
         @include scrollbar;
-
-        @include desktop-width {
-        }
     }
 </style>
 

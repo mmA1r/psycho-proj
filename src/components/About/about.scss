@@ -3,53 +3,49 @@
 .about {
     position: absolute;
     top: 100dvh;
+
     height: 100%;
     max-width: 100%;
-    @include phone-width {
-        background:
-            var(--dark-gradient), 
-            url('/images/bioBackground/about-phone.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        >a { z-index: 100; }
-    }
-
-    @include desktop-width {
-        background:
-            var(--shadow),
-            image-set(
-                url('/images/bioBackground/about-desktop@1x.avif')  type("image/avif") 1x,
-                url('/images/bioBackground/about-desktop@2x.avif')  type("image/avif") 2x,
-                url('/images/bioBackground/about-desktop@1x.webp')  type("image/webp") 1x,
-                url('/images/bioBackground/about-desktop@2x.webp')  type("image/webp") 2x,
-                url('/images/bioBackground/about-desktop@1x.jpg')   type("image/jpg") 1x,
-                url('/images/bioBackground/about-desktop@2x.jpg')   type("image/jpg") 2x,
-            );
-        background-position: 15% center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
 
     color: var(--purple-color);
+    @include phone-width {
+        background: var(--dark-gradient)
+            url('/images/bioBackground/about-phone.jpg');
+    }
 
     @include desktop-width {
         @include parallax(-.3);
         top: 0;
         width: 60%;
         right: -6%;
+        background: var(--shadow);
+    }
+
+}
+
+.about__image-wrapper span, .about__image { @extend %absolute_default; }
+
+.about__image-wrapper >span {
+    @include phone-width {
+        background: -webkit-gradient(var(--dark-gradient));
+        background: var(--dark-gradient);
+    }
+
+    @include desktop-width {
+        background: -webkit-gradient(var(--shadow));
+        background: var(--shadow);
     }
 }
+
+.about__image { >img { @extend %image_default }; }
 
 .about__information-slider {
     position: relative;
     height: 95%;
     width: 100%;
     overflow: hidden;
-    @include desktop-width {
-        animation: appear .7s ease;
-    }
+
+    @include desktop-width { @include appear; }
 }
 
 .about__information-slides {

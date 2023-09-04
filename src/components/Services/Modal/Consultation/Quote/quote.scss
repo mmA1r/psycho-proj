@@ -5,33 +5,43 @@
     display: flex;
     justify-content: center;
     align-self: flex-start;
+
     width: 120%;
-    transform: translate3d(-10%,0,0);
+
     background-color: var(--pink-color);
+
+    -webkit-transform: translate3d(-10%,0,0);
+    transform: translate3d(-10%,0,0);
 
     >blockquote {
         display: flex;
         flex-flow: column;
-        width: 80%;
-        height: 350px;
-        grid-gap: 1dvh;
         align-items: center;
         justify-content: center;
+        gap: 1dvh;
+
+        width: 80%;
+        height: 350px;
+
         >h5, small {
             width: 100%;
+
             text-align: center;
+
             @include phone-width { @include quote-font(var(--dark-color)); }
             @include desktop-width { @include quote-font(var(--dark-color), 16px); }
         }
     }
+    
     >span {
         position: absolute;
         bottom: 15%;
         width: 1px;
+
         height: 30px;
+
         background-color: var(--dark-color);
-        &:first-child {
-            top: 15%;
-        }
+
+        &:first-child { top: 15%; }
     }
 }

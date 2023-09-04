@@ -2,16 +2,24 @@
 
 .appointment {
     position: relative;
-    padding: 20px;
-    color: var(--pink-color);
+
     width: 100%;
+
+    padding: 20px;
+
+    color: var(--pink-color);
+
     >p {
-        margin-top: 7px;
         width: 100%;
+
+        margin-top: 7px;
+
         text-align: center;
         font-style: italic;
+
         @include text-font(currentColor, 14px);
     }
+
     >h3 { color: currentColor; }
 }
 
@@ -21,7 +29,9 @@
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
+
     height: 180px;
+
     margin-top: 4dvh;
 
     color: currentColor;
@@ -29,28 +39,35 @@
     border: 4px solid currentColor;
     border-radius: 13px;
 
+    box-shadow: 0 0 5px currentColor;
+
     >p { @include text-font(currentColor, 20px); }
 
     >div {
-        width: 100%;
-        height: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
-        @include text-font(currentColor, 28px, 800);
+
+        width: 100%;
+        height: 30%;
 
         >svg {
             width: 40px;
             height: 40px;
+
             margin-left: 5%;
             margin-top: 1%;
         }
+
+        @include text-font(currentColor, 28px, 800);
     }
 
     &.link__consultation {
         >div {
             flex-direction: row-reverse;
+
             >svg {
+                -webkit-transform: rotateZ(180deg);
                 transform: rotateZ(180deg);
                 margin-right: 5%;
                 margin-bottom: 1%;
@@ -59,37 +76,59 @@
         }
     }
 
-    box-shadow: 0 0 5px currentColor;
+    @include phone-width { width: 100%; }
 
-    @include phone-width {
-        width: 100%;
-    }
     @include desktop-width {
+        $transition: .5s ease-in-out;
         width: clamp(420px, 30%, 700px);
+
         margin-left: auto;
         margin-right: auto;
-        transition: .5s ease-in-out;
+
+        -webkit-transition: $transition;
+        transition: $transition;
+
+        -webkit-backdrop-filter: blur(7px);
         backdrop-filter: blur(7px);
+
         &::before {
-            transition: .5s ease-in-out;
-            display: block;
-            z-index: -100;
-            content: '';
             position: absolute;
+            z-index: -100;
+
+            display: block;
+            content: '';
+
             height: 105%;
             width: 0;
+
             border-radius: 13px;
+
             background-color: var(--biege-color);
+
             opacity: .9;
+
+            -webkit-transition: $transition;
+            transition: $transition;
         }
+
         &:hover {
             &::before {
                 width: 100%;
             }
+
             color: var(--gray-color);
+
+            -webkit-transform: scale(1.05);
             transform: scale(1.05);
-            &.link__consultation { svg { animation: side-to-side .7s ease; } }
-            &.link__nail { svg { animation: side-to-side_no-rotate .7s ease; } }
+
+            &.link__consultation { svg { 
+                -webkit-animation: side-to-side .7s ease;
+                animation: side-to-side .7s ease;
+            } }
+            &.link__nail { svg {
+                -webkit-animation: side-to-side_no-rotate .7s ease;
+                animation: side-to-side_no-rotate .7s ease; 
+            } }
         }
     }
 }

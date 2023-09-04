@@ -4,14 +4,13 @@
 // font-family: 'Nunito Sans', sans-serif; // quotes
 // font-family: 'Roboto', sans-serif;
 
-@mixin header-font (
-    $color: var(--biege-color),
-    $weight: 300
-) {
+@mixin header-font ( $color: var(--biege-color)) {
     font-family: 'Roboto', sans-serif;
-    font-size: 32px;
-    font-weight: $weight;
+    font-weight: 300;
     color: $color;
+
+    @media screen and (width > 725px) { font-size: calc(var(--index) * 1.2); }
+    @media screen and (width <= 725px) { font-size: calc(var(--index) * 1.9); }
 }
 
 @mixin text-font (

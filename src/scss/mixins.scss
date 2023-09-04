@@ -11,7 +11,10 @@
 }
 
 // *** animations *** //
-@mixin interactive { transition: .7s ease; }
+@mixin interactive {
+    -webkit-transition: .7s ease;
+    transition: .7s ease; 
+}
 
 /***  svg  ***/
 @mixin svg ($isPath: true) {
@@ -26,7 +29,6 @@
 }
 
 @mixin scrollbar {
-
     &::-webkit-scrollbar-thumb {
         background: var(--purple-color);
         border-radius: 13px;
@@ -34,8 +36,22 @@
     &::-webkit-scrollbar-track {
         background: transparent;
     }
-    scrollbar-color: transparent var(--purple-color);
+    scrollbar-color: var(--purple-color) transparent;
 
     @include desktop-width { &::-webkit-scrollbar { width: 4px; } }
     @include phone-width { &::-webkit-scrollbar { width: 3px; } }
+}
+
+@mixin parallax (
+    $distance    : 0,
+    $perspective : 1
+) {
+    @media (-webkit-transform-3d) { // if 3d supports
+        position: absolute;
+        transform:
+            translateZ($distance * $perspective * 1px)
+            scale(abs($distance - 1))
+        ;
+        z-index: $distance * 1000;
+    }
 }

@@ -2,67 +2,101 @@
 
 .services__modal {
     position: fixed;
+    top: 3dvh;
+
     min-width: 100dvw;
     min-height: 94dvh;
-    top: 3dvh;
+
     padding: 5dvh 0;
+
     border: none;
+
+    background: transparent;
+
+    overflow: hidden;
+
+    will-change: transform;
+
+    &.services__consultation { 
+        -webkit-animation: left-side-sliding .7s ease-out;
+        animation: left-side-sliding .7s ease-out;
+
+        &.modal__closing { 
+            -webkit-animation: right-side-sliding .7s ease-out reverse forwards;
+            animation: right-side-sliding .7s ease-out reverse forwards; 
+        }
+    }
+    &.services__nail-therapy {
+        -webkit-animation: right-side-sliding .7s ease-out;
+        animation: right-side-sliding .7s ease-out;
+
+        &.modal__closing {
+            -webkit-animation: left-side-sliding .7s ease-out reverse forwards;
+            animation: left-side-sliding .7s ease-out reverse forwards; 
+        }
+    }
 
     @include desktop-width {
         &::backdrop {
             background-color: #1d1e2cde;
+
+            -webkit-backdrop-filter: blur(3px);
             backdrop-filter: blur(3px);
         }
     }
 
-    background: transparent;
-
-    &::backdrop { background-color: #1d1e2cde; }
-
-    &.services__consultation { 
-        animation: left-side-sliding .7s ease-out; 
-        &.modal__closing { animation: right-side-sliding .7s ease-out reverse forwards; }
+    @include phone-width {
+        &::backdrop { background-color: #1d1e2ce8; }
     }
-    &.services__nail-therapy { 
-        animation: right-side-sliding .7s ease-out; 
-        &.modal__closing { animation: left-side-sliding .7s ease-out reverse forwards; }
-    }
-
-    overflow: hidden;
-    will-change: transform;
 }
 
 .modal__close-button {
     position: fixed;
+
     color: var(--pink-color);
+
     @include phone-width {
         top: -5px;
         width: 40px;
         height: 40px;
 
         &.close-button_left { left: 5px; }
-        &.close-button_right { right: 5px; transform: rotateZ(180deg); }
+
+        &.close-button_right { 
+            right: 5px;
+            -webkit-transform: rotateZ(180deg);
+            transform: rotateZ(180deg); 
+        }
     }
 
     @include desktop-width {
         top: 0;
+
         width: 50px;
         height: 50px;
-        @include interactive;
+
         &.close-button_left { 
             left: 5%;
             &:hover {
                 color: var(--biege-color);
+
+                -webkit-animation: side-to-side_no-rotate .7s ease;
                 animation: side-to-side_no-rotate .7s ease;
             }
         }
         &.close-button_right { 
             right: 5%; 
+
+            -webkit-transform: rotateZ(180deg);
             transform: rotateZ(180deg); 
+
             &:hover {
                 color: var(--biege-color);
+                -webkit-animation: side-to-side .7s ease;
                 animation: side-to-side .7s ease;
             }
         }
+
+        @include interactive;
     }
 }

@@ -4,9 +4,10 @@
     position: absolute;
     inset: 0;
     z-index: 100;
-    max-width: 100dvw;
-
+    
+    -webkit-animation: headerShow .7s forwards;
     animation: headerShow .7s forwards;
+
     @include phone-width { width: 100%; height: 50px; }
     @include desktop-width { width: 40%; height: 150px; }
 }
@@ -19,21 +20,24 @@
 
 .header__navigation-list {
     display: flex;
+    justify-content: center;
+    width: 100%;
+
     @include phone-width {
-        gap: 10dvw;
+        gap: 7dvw;
         align-items: center;
         height: 100%;
         padding: 0 15px;
     }
+
     @include desktop-width {
         flex-flow: column;
+        gap: 20px;
         padding-left: 30px;
         padding-top: 30px;
         height: 75%;
-        gap: 20px;
     }
-    justify-content: center;
-    width: 100%;
+
     container-type: inline-size;
 }
 
@@ -41,11 +45,13 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    content-visibility: hidden;
+    display: none;
 }
 
+@supports (content-visibility: hidden) { .hiden-svg-init { content-visibility: hidden; } }
+
+@supports not (content-visibility: hidden) { .hiden-svg-init { display: none; } }
+
 @container ( width <= 333px ) {
-    .header__anchor {
-        font-size: 16px;
-    }
+    .header__anchor { font-size: 16px; }
 }

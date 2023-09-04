@@ -13,6 +13,17 @@
     100% { opacity: 1; transform: scale(1); }
 }
 
+@mixin appear ($isForward: false) {
+    @if $isForward {
+        -webkit-animation: appear .7s ease forwards;
+        animation: appear .7s ease forwards;
+    }
+    @if not $isForward {
+        -webkit-animation: appear .7s ease;
+        animation: appear .7s ease;
+    }
+}
+
 @keyframes appear2 {
     100% { opacity: 1; transform: scale(1); }
 }

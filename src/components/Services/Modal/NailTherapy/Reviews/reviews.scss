@@ -2,20 +2,35 @@
 
 .reviews__slider {
     position: relative;
+
     width: 100%;
+
     margin-top: 4dvh;
+
     overflow: hidden;
+
     border-radius: 13px;
+
     @include phone-width { background-color: var(--dark-color); }
+
     &.slides_slided { 
-        & article { transform: translate3d(-100%,0,0); }
-        & svg { transform: rotateY(180deg) translate3d(160%,0,0); } 
+        & article {
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); 
+        }
+
+        & svg {
+            -webkit-transform: rotateY(180deg) translateX(160%);
+            transform: rotateY(180deg) translateX(160%); 
+        } 
     }
 }
 
 .reviews__slides {
     display: flex;
+
     height: 100%;
+
     >article { @include interactive; }
 
     @include phone-width {
@@ -23,47 +38,61 @@
     }
 
     @include desktop-width {
-        width: 100%;
         justify-content: center;
         gap: 5dvw;
+
+        width: 100%;
     }
 }
 
 .reviews__slide {
     min-height: 100%;
-    @include phone-width {
-        width: 100%;
-    }
-    @include desktop-width {
-        display: flex;
-        flex-flow: column;
-        width: clamp(320px, 30%, 520px);
-        >p {
-            border-bottom-left-radius: 13px;
-            border-bottom-right-radius: 13px;
-            border: 1px solid var(--pink-color);
-            border-top: none;
-            line-height: 1.5em;
-            flex-grow: 1;
-        }
-    }
+
     >header {
         width: 100%;
         height: 40px;
-        text-align: left;
+        
         padding-left: 14px;
+
         line-height: 40px;
+        text-align: left;
+
         background-color: var(--half-pink-color);
+
         border-top: 1px solid var(--pink-color);
         border-bottom: 1px solid var(--pink-color);
         border-top-left-radius: 13px;
         border-top-right-radius: 13px;
     }
+
     & h4 { @include text-font(var(--biege-color), 18px); }
+
     >p {
         text-align: center;
         padding: 24px;
         @include text-font(var(--biege-color), 16px);
+    }
+
+    @include phone-width {
+        width: 100%;
+    }
+
+    @include desktop-width {
+        display: flex;
+        flex-flow: column;
+
+        width: clamp(320px, 30%, 520px);
+
+        >p {
+            flex-grow: 1;
+
+            border-bottom-left-radius: 13px;
+            border-bottom-right-radius: 13px;
+            border: 1px solid var(--pink-color);
+            border-top: none;
+
+            line-height: 1.5em;
+        }
     }
 }
 
@@ -71,18 +100,24 @@
     position: relative;
     width: 100%;
     height: 40px;
+
     background-color: var(--half-pink-color);
+    color: var(--biege-color);
+
     border: 1px solid var(--pink-color);
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
-    color: var(--biege-color);
 
     >svg {
         position: absolute;
         bottom: 0;
+
         height: 100%;
         width: 100px;
-        transform: translate3d(60%,0,0);
+
+        -webkit-transform: translateX(60%);
+        transform: translateX(60%);
+        
         @include interactive;
     }
 

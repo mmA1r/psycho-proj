@@ -48,7 +48,6 @@ const Picture: FunctionComponent<Picture> = ({ type }) => {
     const image = (
         type === 1 ? 
             <img
-                class={""}
                 src="/images/nailConsultaion/nail-consultation1@1x.jpg"
                 srcset=" /images/nailConsultaion/nail-consultation1@2x.jpg 2x"
                 alt={"Екатерина Матвеева"}

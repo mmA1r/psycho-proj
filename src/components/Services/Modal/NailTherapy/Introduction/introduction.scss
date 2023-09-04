@@ -5,9 +5,12 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
+
     width: 100%;
     height: 80dvh;
-    @include desktop-width { perspective: 1000px; gap: 7dvh; }
+
+    @include desktop-width { @media (-webkit-transform-3d) { perspective: 1000px; } gap: 7dvh; }
+
     @include phone-width { margin-top: 40px; }
 }
 
@@ -15,43 +18,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     gap: 2dvw;
+
+    width: 100%;
+    height: 80%;
 
     >div { position: relative; }
 
     @include desktop-width {
         transform-style: preserve-3d;
-        height: fit-content;
+
         >div {
-            height: fit-content;
             width: clamp(270px, 30%, 340px);
+            height: 100%;
+            
             border: 2px solid var(--pink-color);
             box-shadow: 0 0 5px var(--pink-color);
+
+            -webkit-transition: 1s cubic-bezier(.05, .5, 0, 1);
             transition: 1s cubic-bezier(.05, .5, 0, 1);
+
             will-change: transform;
         }
     }
 
     @include phone-width {
         flex-flow: column;
-        height: clamp(630px, 100%, 100%);
+
+        height: 100%;
+
         margin-top: 20px;
+
         >div {
-            width: 100%;
             display: flex;
+
+            width: 100%;
+            max-height: 255px;
+
             border-top: 1px solid var(--biege-color);
             border-bottom: 1px solid var(--biege-color);
-            max-height: 255px;
         } 
     }
 }
 
 .introduction__title {
-    @include text-font(var(--biege-color), 28px);
     text-align: center;
+
     >p {
-        @include text-font(var(--biege-color), 16px);
         font-style: italic;
+        @include text-font(var(--biege-color), 16px);
     }
+
+    @include text-font(var(--biege-color), 28px);
 }
