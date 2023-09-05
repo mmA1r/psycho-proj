@@ -4,8 +4,8 @@
     position: relative;
     display: flex;
     flex-flow: column;
-    text-align: center;
     align-items: center;
+    justify-content: center;
     gap: 20px;
 
     width: 100%;
@@ -23,12 +23,10 @@
 }
 
 .about__sub-title {
-    min-height: 40%;
-
     text-align: end;
     writing-mode: vertical-lr;
     text-orientation: upright;
-
+    margin: 2dvh 1dvw;
     &.bio-sub-title { align-self: flex-end; }
     &.education-sub-title { align-self: flex-start; }
 
@@ -36,7 +34,6 @@
 
     @include desktop-width { 
         font-size: calc(var(--index) * .75);
-        margin: 0 1dvw;
     }
 }
 
