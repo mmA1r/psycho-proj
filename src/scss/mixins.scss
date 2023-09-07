@@ -37,6 +37,8 @@
         background: transparent;
     }
     scrollbar-color: var(--purple-color) transparent;
+    
+    -webkit-overflow-scrolling:touch;
 
     @include desktop-width { &::-webkit-scrollbar { width: 4px; } }
     @include phone-width { &::-webkit-scrollbar { width: 3px; } }
