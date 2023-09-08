@@ -41,6 +41,6 @@
 
         text-align: center;
 
-        @include text-font(var(--biege-color), clamp(12px, 2dvw, 18px));
+        @include text-font(var(--biege-color), clamp(12px, 2vw, 18px));
     }
 }

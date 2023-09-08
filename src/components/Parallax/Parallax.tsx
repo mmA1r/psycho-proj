@@ -1,6 +1,7 @@
 import type { FunctionComponent } from 'preact';
 import LeftUpperFrame from '../../svg/LeftUpperFrame/LeftUpperFrame';
 import RightUpperFrame from '../../svg/RightUpperFrame/RightUpperFrame';
+
 import './parallax.scss';
 
 interface Parallax { type: number }

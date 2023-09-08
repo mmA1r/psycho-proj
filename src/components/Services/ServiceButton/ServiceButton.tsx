@@ -1,6 +1,7 @@
 import type { FunctionComponent } from 'preact';
 import { useRef } from 'preact/hooks';
 import { nailTherapy, consultation } from '../../../data/data.json';
+
 import './serviceButton.scss';
 
 export enum ServiceTypes {
@@ -8,9 +9,9 @@ export enum ServiceTypes {
     consultation = 'consultation'
 }
 
-interface ServiceButton { open: Function, type: ServiceTypes, } 
+interface IServiceButton { open: Function, type: ServiceTypes, } 
 
-const ServiceButton: FunctionComponent<ServiceButton> = ({ open, type }) => {
+const ServiceButton: FunctionComponent<IServiceButton> = ({ open, type }) => {
     const button = useRef<HTMLButtonElement>(null);
 
     const isNail = type === ServiceTypes.nail ? true : false;
@@ -19,6 +20,7 @@ const ServiceButton: FunctionComponent<ServiceButton> = ({ open, type }) => {
     const classPrefix = isNail ? 'nail' : 'consultation';
 
     const onClickHandler = () => {
+        console.log(2);
         open();
         document.body.classList.add('scroll-lock');
     }

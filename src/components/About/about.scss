@@ -2,16 +2,12 @@
 
 .about {
     position: absolute;
-    top: 100dvh;
+    top: 100vh;
 
     height: 100%;
     max-width: 100%;
 
     color: var(--purple-color);
-    @include phone-width {
-        background: var(--dark-gradient)
-            url('/images/bioBackground/about-phone.jpg');
-    }
 
     @include desktop-width {
         @include parallax(-.3);
@@ -23,7 +19,7 @@
 
 }
 
-.about__image-wrapper span, .about__image { @extend %absolute_default; }
+.about__image-wrapper, .about__image-wrapper span, .about__image { @extend %absolute_default; }
 
 .about__image-wrapper >span {
     @include phone-width {

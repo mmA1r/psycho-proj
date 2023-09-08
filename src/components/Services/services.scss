@@ -2,6 +2,7 @@
 
 .services {
     position: absolute;
+    z-index: 100;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -13,12 +14,12 @@
 
     @include phone-width {
         height: 420px;
-        top: 200dvh;
+        top: 200vh;
     }
 
     @include desktop-width {
-        height: 70dvh;
-        top: 100dvh;
+        height: 70vh;
+        top: 101vh;
     }
 }
 
@@ -39,6 +40,7 @@
 }
 
 .servicers__navigation-list {
+    position: relative;
     display: flex;
     align-items: center;
     

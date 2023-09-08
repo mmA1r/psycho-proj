@@ -1,5 +1,6 @@
 import NextPageArrow from '../../svg/NextPageArrow/NextPageArrow';
 import InformationBlock, { InformationTypes } from './InformationBlock/InformationBlock';
+
 import './about.scss';
 
 const About = () => {
@@ -21,8 +22,8 @@ const About = () => {
             type={"image/webp"}
         />
         <img
-            src="/images/bioBackground/about-desktop@1x@1x.jpg"
-            srcset="/images/bioBackground/about-desktop@2x2x.jpg 2x"
+            src="/images/bioBackground/about-desktop@1x.jpg"
+            srcset="/images/bioBackground/about-desktop@2x.jpg 2x"
             alt={"Фон"}
         />
     </picture>;

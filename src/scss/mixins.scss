@@ -1,11 +1,11 @@
 @mixin desktop-width {
-    @media screen and (width > 725px) {
+    @media screen and (min-width: 726px) {
         @content;
     }
 }
 
 @mixin phone-width {
-    @media screen and (width <= 725px){
+    @media screen and (max-width: 725px){
         @content;
     }
 }

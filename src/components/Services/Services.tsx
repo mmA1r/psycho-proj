@@ -1,17 +1,23 @@
 import { useRef } from 'preact/hooks';
-import NextPageArrow from '../../svg/NextPageArrow/NextPageArrow';
 import ServiceButton, { ServiceTypes } from './ServiceButton/ServiceButton';
+import NextPageArrow from '../../svg/NextPageArrow/NextPageArrow';
 import { servicesTitle } from '../../data/data.json';
-
-import './services.scss';
 import Modal from './Modal/Modal';
+import './services.scss';
 
 const Services = (children: any) => {
     const nailTherapy = useRef<HTMLDialogElement>(null);
     const consultation = useRef<HTMLDialogElement>(null);
 
-    const openNail = () => nailTherapy.current?.showModal();
-    const openConusltation = () => consultation.current?.showModal();
+    const openNail = () => {
+        document.body.classList.add('scroll-lock');
+        nailTherapy.current?.showModal();
+    }
+
+    const openConusltation = () =>{
+        document.body.classList.add('scroll-lock');
+        consultation.current?.showModal();
+    }
 
     const image = <picture class={"services__image"}>
         <source 
@@ -66,8 +72,8 @@ const Services = (children: any) => {
                 aria-label={"Страница контакты"}
             > <NextPageArrow/> </a>
             <div class={"blur-block blur-block_right"} />
-            <Modal type={ServiceTypes.nail} children={children} ref={nailTherapy} />
-            <Modal type={ServiceTypes.consultation} children={children}  ref={consultation} />
+            {/*<Modal type={ServiceTypes.nail} children={children} ref={nailTherapy} />
+            <Modal type={ServiceTypes.consultation} children={children}  ref={consultation} />*/}
         </section>
     );
 }

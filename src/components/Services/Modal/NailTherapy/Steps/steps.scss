@@ -3,7 +3,7 @@
 .nail-therapy__steps {
     display: flex;
     flex-flow: column;
-    gap: 5dvh;
+    gap: 5vh;
 
     width: 100%;
 
@@ -15,12 +15,12 @@
         width: 100%;
 
         @include desktop-width {
-            gap: 5dvw;
+            gap: 5vw;
             padding: 0 7%;
         }
 
         @include phone-width {
-            gap: 5dvh;
+            gap: 5vh;
             flex-flow: column;
         }
     }

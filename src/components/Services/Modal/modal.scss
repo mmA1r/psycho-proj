@@ -1,13 +1,14 @@
 @use '/src/scss/index.scss' as *;
 
 .services__modal {
+    display: none;
     position: fixed;
-    top: 3dvh;
+    z-index: 1000;
 
-    min-width: 100dvw;
-    min-height: 94dvh;
+    min-width: 100vw;
+    min-height: 94vh;
 
-    padding: 5dvh 0;
+    padding: 5vh 0;
 
     border: none;
 
@@ -17,6 +18,8 @@
 
     will-change: transform;
 
+    &.modal_opened { display: block; }
+
     &.services__consultation { 
         -webkit-animation: left-side-sliding .7s ease-out;
         animation: left-side-sliding .7s ease-out;
@@ -25,7 +28,9 @@
             -webkit-animation: right-side-sliding .7s ease-out reverse forwards;
             animation: right-side-sliding .7s ease-out reverse forwards; 
         }
+
     }
+
     &.services__nail-therapy {
         -webkit-animation: right-side-sliding .7s ease-out;
         animation: right-side-sliding .7s ease-out;

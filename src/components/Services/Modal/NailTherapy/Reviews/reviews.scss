@@ -5,7 +5,7 @@
 
     width: 100%;
 
-    margin-top: 4dvh;
+    margin-top: 4vh;
 
     overflow: hidden;
 
@@ -39,7 +39,7 @@
 
     @include desktop-width {
         justify-content: center;
-        gap: 5dvw;
+        gap: 5vw;
 
         width: 100%;
     }
@@ -81,7 +81,11 @@
         display: flex;
         flex-flow: column;
 
-        width: clamp(320px, 30%, 520px);
+        min-width: 320px;
+        width: 30%;
+        max-width: 520px;
+
+        //width: clamp(320px, 30%, 520px);
 
         >p {
             flex-grow: 1;

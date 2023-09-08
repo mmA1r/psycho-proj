@@ -1,13 +1,14 @@
 @use '/src/scss/index.scss' as *;
+
 .parallax__elem_left, .parallax__elem_right {
     @include desktop-width { display: none; }
     @include phone-width {
         display: none;
-        @media screen and (width >= 325px) {
+        @media screen and (min-width: 325px) {
             display: block !important;
             @include parallax(.1);
-            width: 10dvw;
-            height: 40dvh;
+            width: 10vw;
+            height: 40vh;
         }
     }
 }
@@ -15,8 +16,8 @@
 .parallax__elem_right {
     @include phone-width {
         right: 0;
-        &.parallax_upper { color: var(--dark-color); top: 20dvh; }
-        &.parallax_lower { color: var(--gray-color); bottom: -170dvh; } 
+        &.parallax_upper { color: var(--dark-color); top: 20vh; }
+        &.parallax_lower { color: var(--gray-color); bottom: -170vh; } 
     }
     right: 0;
 }
@@ -24,7 +25,7 @@
 .parallax__elem_left {
     @include phone-width {
         left: 0;
-        &.parallax_upper { color: var(--dark-color); top: 30dvh; }
-        &.parallax_lower { color: var(--gray-color); bottom: -170dvh; }
+        &.parallax_upper { color: var(--dark-color); top: 30vh; }
+        &.parallax_lower { color: var(--gray-color); bottom: -170vh; }
     }
 }

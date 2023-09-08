@@ -2,13 +2,13 @@
 .consultation__requests, .consultation__guarantees {
     display: flex;
     flex-flow: column;
-    gap: 5dvh;
+    gap: 5vh;
 
     width: 100%;
 
     >ul {
         display: flex;
-        gap: 3dvh;
+        gap: 3vh;
 
         width: 100%;
 
@@ -24,13 +24,13 @@
     @include phone-width {
         justify-content: center;
 
-        min-height: 85dvh; 
+        min-height: 85vh; 
     }
 
     @include desktop-width {
         justify-content: start; 
 
-        padding: 5dvh 0;
+        padding: 5vh 0;
 
         >ul {
             display: grid;

@@ -22,7 +22,11 @@
         justify-content: space-around;
         gap: 20px;
 
-        width: clamp(740px, 80%, 1400px);
+        min-width: 740px;
+        width: 80%;
+        max-width: 1400px;
+
+        //width: clamp(740px, 80%, 1400px);
 
         >picture {
             display: flex;

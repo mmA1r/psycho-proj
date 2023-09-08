@@ -2,7 +2,11 @@
 
 .service__item {
     position: relative;
+
     color: var(--gray-color);
+
+    margin: 0 1%;
+
     @include phone-width {
         width: 80%;
         height: 100px;
@@ -61,6 +65,7 @@
         &::before {
             position: absolute;
             z-index: -100;
+
             inset: -2px;
 
             display: block;
@@ -71,6 +76,11 @@
             background-color: var(--gray-color);
 
             @include interactive;
+
+            @supports not (inset: -2px) {
+                top: -2px;
+                left: -2px;
+            }
         }
 
         &::after {

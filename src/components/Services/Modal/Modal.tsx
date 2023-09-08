@@ -16,6 +16,7 @@ const Modal = forwardRef<HTMLDialogElement, Props>(({ type, children }, ref) => 
         setTimeout(() => {
             modal.current?.close();
             modal.current?.classList.remove('modal__closing');
+            modal.current?.classList.remove('modal_opened');
         }, 700);
     };
     
@@ -26,11 +27,11 @@ const Modal = forwardRef<HTMLDialogElement, Props>(({ type, children }, ref) => 
     const content = isNail ? children.nailThreapy : children.consultation;
 
     return (
-        <dialog ref={modal} id={id} class={subclass + " services__modal"}>
+        <dialog open={false} ref={modal} id={id} class={subclass + " services__modal"}>
             <button onClick={onClickHandler} class={"modal__close-button close-button_"+buttonSide}>
                 <svg class="move-to-arrow_reused"><use xlinkHref="#move-to-arrow_shaded"></use></svg>
             </button>
-            { content }
+            {/*{ content }*/}
         </dialog>
     );
 })
