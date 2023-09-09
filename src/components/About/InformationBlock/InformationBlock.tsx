@@ -17,7 +17,7 @@ const InformationBlock: FunctionComponent<InformationBlock> = ({ type }) => {
     const paragraphs = isBio ? about.paragraphs : education.paragraphs;
     const index = isBio ? 0 : -1;
 
-    const onClickHandler = () => {
+    function onClickHandler() {
         const slides = document.querySelectorAll<HTMLDivElement>('.about__information-block');
         const [bio, education] = document.querySelectorAll<HTMLButtonElement>('.about__change-slide');
         if (isBio) {
