@@ -3,7 +3,7 @@ import InformationBlock, { InformationTypes } from './InformationBlock/Informati
 
 import './about.scss';
 
-function About() {
+const About = () => {
     const image = <picture class={"about__image"}>
         <source 
             srcset="/images/bioBackground/about-phone.jpg"
