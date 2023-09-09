@@ -15,29 +15,3 @@ import { consultation } from '../../../../data/data.json';
     <Method client:visible/>
     <Appointment client:visible info={consultation.price} type={1} />
 </div>
-
-<style lang="scss">
-    @use '/src/scss/index.scss' as *;
-
-    .consultation-wrapper {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        gap: 10vh;
-
-        width: 100%;
-        height: 85vh;
-
-        padding: 0 18px;
-
-        overflow-y: auto;
-        overflow-x: hidden;
-        
-        scroll-behavior: smooth;
-        overscroll-behavior: contain;
-
-        @include desktop-width {
-            @include scrollbar;
-        }
-    }
-</style>

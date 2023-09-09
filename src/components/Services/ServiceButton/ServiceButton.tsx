@@ -20,7 +20,6 @@ const ServiceButton: FunctionComponent<IServiceButton> = ({ open, type }) => {
     const classPrefix = isNail ? 'nail' : 'consultation';
 
     const onClickHandler = () => {
-        console.log(2);
         open();
         document.body.classList.add('scroll-lock');
     }
@@ -28,6 +27,7 @@ const ServiceButton: FunctionComponent<IServiceButton> = ({ open, type }) => {
     return (
         <li class="service__item">
             <button
+                disabled={false}
                 class={"service__button " + "service__" + classPrefix + "-button"}
                 type="button"
                 ref={button}

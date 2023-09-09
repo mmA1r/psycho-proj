@@ -4,9 +4,10 @@
     display: none;
     position: fixed;
     z-index: 1000;
+    top: 0;
 
     min-width: 100vw;
-    min-height: 94vh;
+    min-height: 100vh;
 
     padding: 5vh 0;
 
@@ -55,13 +56,23 @@
     }
 }
 
+@supports not (backdrop()) {
+    .services__modal {
+        height: 100vh;
+        background-color: #1d1e2cee;
+
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
+    }
+}
+
 .modal__close-button {
     position: fixed;
+    top: 0;
 
     color: var(--pink-color);
 
     @include phone-width {
-        top: -5px;
         width: 40px;
         height: 40px;
 
@@ -75,8 +86,6 @@
     }
 
     @include desktop-width {
-        top: 0;
-
         width: 50px;
         height: 50px;
 

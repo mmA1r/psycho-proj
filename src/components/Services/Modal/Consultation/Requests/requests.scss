@@ -5,14 +5,15 @@
     gap: 5vh;
 
     width: 100%;
+    min-height: max-content;
 
     >ul {
         display: flex;
-        gap: 3vh;
 
         width: 100%;
 
         @include phone-width { flex-flow: column; }
+        @include desktop-width { gap: 3vh; }
     }
 }
 
@@ -69,6 +70,10 @@
         animation: appear2 .7s ease forwards;
 
         opacity: 0;
+    }
+
+    @include phone-width {
+        margin: 1.5vh 0;
     }
 }
 

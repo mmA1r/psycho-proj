@@ -19,9 +19,13 @@ const Reviews = () => {
     const slider = useRef<HTMLDivElement>(null);
 
     const onClickHandler = () => {
-        slider.current?.classList.contains('slides_slided') ? 
-        slider.current?.classList.remove('slides_slided') : 
-        slider.current?.classList.add('slides_slided');
+        const sliderRefs = slider.current;
+        
+        if (sliderRefs) {
+            sliderRefs.classList.contains('slides_slided') ?
+            sliderRefs.classList.remove('slides_slided') :
+            sliderRefs.classList.add('slides_slided');
+        }
     }
 
     const reviews = nailTherapy.reviews.map(review => <Review reviewer={review.title} review={review.text} />);

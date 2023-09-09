@@ -15,6 +15,7 @@
     @include desktop-width {
         width: 420px;
         height: 120px;
+        
         &:hover {
             color: var(--biege-color);
             box-shadow: 0 0 7px var(--gray-color);

@@ -63,7 +63,7 @@
 .about__change-slide {
     position: absolute;
 
-    min-width: none; // due to safari...
+    min-width: 35px; // due to safari...
     width: calc(var(--index) * 2);
     max-width: 100px;
 

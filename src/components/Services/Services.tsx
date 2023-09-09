@@ -10,13 +10,23 @@ const Services = (children: any) => {
     const consultation = useRef<HTMLDialogElement>(null);
 
     const openNail = () => {
-        document.body.classList.add('scroll-lock');
-        nailTherapy.current?.showModal();
+        const nail = nailTherapy.current;
+
+        if (nail) {
+            nail.classList.add('modal_opened');
+            
+            if (nail.showModal) { nail.showModal(); }
+        }
     }
 
     const openConusltation = () =>{
-        document.body.classList.add('scroll-lock');
-        consultation.current?.showModal();
+        const consult = consultation.current;
+
+        if (consult) {
+            consult.classList.add('modal_opened');
+
+            if (consult.showModal) { consult.showModal(); } 
+        }
     }
 
     const image = <picture class={"services__image"}>
@@ -72,8 +82,8 @@ const Services = (children: any) => {
                 aria-label={"Страница контакты"}
             > <NextPageArrow/> </a>
             <div class={"blur-block blur-block_right"} />
-            {/*<Modal type={ServiceTypes.nail} children={children} ref={nailTherapy} />
-            <Modal type={ServiceTypes.consultation} children={children}  ref={consultation} />*/}
+            <Modal type={ServiceTypes.nail} children={children} ref={nailTherapy} />
+            <Modal type={ServiceTypes.consultation} children={children}  ref={consultation} />
         </section>
     );
 }

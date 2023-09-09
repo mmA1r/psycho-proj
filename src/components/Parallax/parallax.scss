@@ -9,6 +9,8 @@
             @include parallax(.1);
             width: 10vw;
             height: 40vh;
+
+            .scroll-lock &  { display: none !important; }
         }
     }
 }

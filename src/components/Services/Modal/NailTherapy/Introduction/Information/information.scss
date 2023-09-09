@@ -15,7 +15,10 @@
 
     @include phone-width {
         width: 80%;
-        >p { &:first-child { border-bottom: 1px solid; } }
+        >p { 
+            &:first-child { border-bottom: 1px solid; }
+            @include text-font(var(--biege-color), 12px);
+        }
     }
 
     @include desktop-width {
@@ -27,6 +30,13 @@
 
         -webkit-backdrop-filter: blur(1px);
         backdrop-filter: blur(1px);
+
+        >p { @include text-font(var(--biege-color), 18px); }
+
+        @supports not (inset: 0) {
+            top: 0;
+            left: 0;
+        }
     }
 
     >p { 
@@ -41,6 +51,5 @@
 
         text-align: center;
 
-        @include text-font(var(--biege-color), clamp(12px, 2vw, 18px));
     }
 }

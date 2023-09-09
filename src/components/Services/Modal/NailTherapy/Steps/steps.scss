@@ -7,22 +7,24 @@
 
     width: 100%;
 
-    color: var(--biege-color);
-
     >div {
         display: flex;
 
         width: 100%;
 
-        @include desktop-width {
-            gap: 5vw;
-            padding: 0 7%;
-        }
+        @include desktop-width { padding: 0 4%; }
 
-        @include phone-width {
-            gap: 5vh;
-            flex-flow: column;
-        }
+        @include phone-width { flex-flow: column; }
+    }
+
+    @include desktop-width {
+        min-height: max-content;
+        margin: 20px 0;
+    }
+
+    @include phone-width {
+        min-height: max-content;
+        margin: 20px 0;
     }
 }
 
@@ -31,6 +33,8 @@
     height: auto;
 
     opacity: .3;
+
+    margin: 1.5vh 1.5vw;
 
     -webkit-transform: scale(.6);
     transform: scale(.6);
@@ -41,13 +45,13 @@
         display: inline-block;
         width: 100%;
 
-        color: currentColor;
 
         padding-right: 20px;
 
         text-align: end;
 
         @include text-font(var(--biege-color), 12px, 300);
+        color: currentColor;
     }
 
     &.step_appear {
@@ -90,9 +94,9 @@
     >p {
         width: 60%;
 
-        color: currentColor;
-
         @include text-font(var(--biege-color), 16px);
+
+        color: currentColor;
     }
 
     >div {
@@ -102,12 +106,13 @@
         text-align: center;
         line-height: 50px;
 
-        color: currentColor;
 
         border-radius: 50%;
         border: 2px solid;
 
         @include text-font(var(--biege-color), 18px);
+        
+        color: currentColor;
     }
     
     >span {

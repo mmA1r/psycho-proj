@@ -14,7 +14,6 @@
         min-width: 120px;
         width: 40%;
         max-width: 180px;
-        //width: clamp(120px, 40%, 180px);
 
         border-right: 1px solid var(--biege-color);
 
@@ -24,10 +23,16 @@
 
     @include desktop-width {
         inset: 0;
+        
         >img {
             display: block;
             width: 100%;
             min-height: 100%;
+        }
+
+        @supports not (inset: 0) {
+            top: 0;
+            left: 0;
         }
     }
 }

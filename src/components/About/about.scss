@@ -22,15 +22,8 @@
 .about__image-wrapper, .about__image-wrapper span, .about__image { @extend %absolute_default; }
 
 .about__image-wrapper >span {
-    @include phone-width {
-        background: -webkit-gradient(var(--dark-gradient));
-        background: var(--dark-gradient);
-    }
-
-    @include desktop-width {
-        background: -webkit-gradient(var(--shadow));
-        background: var(--shadow);
-    }
+    background: -webkit-gradient(var(---shadow));
+    background: var(--shadow);
 }
 
 .about__image { >img { @extend %image_default }; }

@@ -1,11 +1,17 @@
 @use '/src/scss/index.scss' as *;
 
+.nail-therapy__reviews {
+    position: relative;
+    margin: 3vh 0;
+    min-height: max-content;
+}
+
 .reviews__slider {
     position: relative;
 
     width: 100%;
 
-    margin-top: 4vh;
+    margin-top: 2vh;
 
     overflow: hidden;
 
@@ -39,7 +45,6 @@
 
     @include desktop-width {
         justify-content: center;
-        gap: 5vw;
 
         width: 100%;
     }
@@ -85,7 +90,7 @@
         width: 30%;
         max-width: 520px;
 
-        //width: clamp(320px, 30%, 520px);
+        margin: 0 2.5vw;
 
         >p {
             flex-grow: 1;

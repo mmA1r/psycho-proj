@@ -11,13 +11,18 @@ const Modal = forwardRef<HTMLDialogElement, Props>(({ type, children }, ref) => 
     useImperativeHandle<HTMLDialogElement|null, HTMLDialogElement|null>(ref, () => modal.current);
 
     const onClickHandler = () => {
+        const modalCurr = modal.current;
+
         document.body.classList.remove('scroll-lock');
-        modal.current?.classList.add('modal__closing');
-        setTimeout(() => {
-            modal.current?.close();
-            modal.current?.classList.remove('modal__closing');
-            modal.current?.classList.remove('modal_opened');
-        }, 700);
+        
+        if (modalCurr) {
+            modalCurr.classList.add('modal__closing');
+            setTimeout(() => {
+                if (modalCurr.close) { modalCurr.close(); }
+                modalCurr.classList.remove('modal__closing');
+                modalCurr.classList.remove('modal_opened');
+            }, 700);
+        }
     };
     
     const isNail = type === ServiceTypes.nail ? true : false;
@@ -31,7 +36,7 @@ const Modal = forwardRef<HTMLDialogElement, Props>(({ type, children }, ref) => 
             <button onClick={onClickHandler} class={"modal__close-button close-button_"+buttonSide}>
                 <svg class="move-to-arrow_reused"><use xlinkHref="#move-to-arrow_shaded"></use></svg>
             </button>
-            {/*{ content }*/}
+            { content }
         </dialog>
     );
 })
