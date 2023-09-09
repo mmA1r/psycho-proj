@@ -5,23 +5,23 @@ import './main.scss';
 const Main = () => {
 
     const image = <picture class={"main__image"}>
-        <source 
+        <source
+            media={"(max-width: 725px)"}
             srcset="/images/mainPhoto/main-background-phone@1x.avif 1x,
                     /images/mainPhoto/main-background-phone@2x_desktop@1x.avif 2x"
             type={"image/avif"}
-            media={"(max-width: 725px)"}
         />
-        <source 
+        <source
+            media={"(max-width: 725px)"}
             srcset="/images/mainPhoto/main-background-phone@1x.webp 1x,
                     /images/mainPhoto/main-background-phone@2x_desktop@1x.webp 2x"
             type={"image/webp"}
-            media={"(max-width: 725px)"}
         />
-        <source 
+        <source
+            media={"(max-width: 725px)"}
             srcset="/images/mainPhoto/main-background-phone@1x.jpg 1x,
                     /images/mainPhoto/main-background-phone@2x_desktop@1x.jpg 2x"
             type={"image/jpg"}
-            media={"(max-width: 725px)"}
         />
         <source 
             srcset="/images/mainPhoto/main-background-phone@2x_desktop@1x.avif 1x,

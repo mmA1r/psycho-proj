@@ -6,9 +6,9 @@ import './about.scss';
 const About = () => {
     const image = <picture class={"about__image"}>
         <source 
+            media={"(max-width: 725px)"}
             srcset="/images/bioBackground/about-phone.jpg"
             type={"image/jpg"}
-            media={"(max-width: 725px)"}
         />
         <source 
             srcset="/images/bioBackground/about-desktop@1x.avif 1x,
@@ -21,6 +21,7 @@ const About = () => {
             type={"image/webp"}
         />
         <img
+            loading={"lazy"}
             src="/images/bioBackground/about-desktop@1x.jpg"
             srcset="/images/bioBackground/about-desktop@2x.jpg 2x"
             alt={"Фон"}
