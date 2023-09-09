@@ -12,7 +12,7 @@ interface InformationBlock {
     type: InformationTypes;
 }
 
-const InformationBlock: FunctionComponent<InformationBlock> = ({ type }) => {
+function InformationBlock({ type }: { type: InformationTypes }) {
     const isBio = type === InformationTypes.bio ? true : false;
     const paragraphs = isBio ? about.paragraphs : education.paragraphs;
     const index = isBio ? 0 : -1;
