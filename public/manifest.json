@@ -8,18 +8,18 @@
             "type": "image/x-icon"
         },
         {
-            "src": "./icons/lotus-192.png",
+            "src": "icons/lotus-192.png",
             "types": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "./icons/losut-512.png",
+            "src": "icons/losut-512.png",
             "types": "image/png",
             "sizes": "512x512",
             "purpose": "any maskable"
         }
     ],
-    "start_url": ".",
+    "start_url": "https://ekaterina8matveeva.com/",
     "display": "standalone",
     "theme_color": "#AC9FBB",
     "background_color": "#1D1E2C"
