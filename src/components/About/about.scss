@@ -8,6 +8,7 @@
     max-width: 100%;
 
     color: var(--purple-color);
+    background-color: var(--dark-color);
 
     @include desktop-width {
         @include parallax(-.3);

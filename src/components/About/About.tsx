@@ -36,8 +36,8 @@ const About = () => {
             </div>
             <div class="about__information-slider">
                 <div class="about__information-slides">
-                    <InformationBlock type={InformationTypes.bio}/>
-                    <InformationBlock type={InformationTypes.education}/>
+                    {/*<InformationBlock type={InformationTypes.bio}/>*/}
+                    {/*<InformationBlock type={InformationTypes.education}/>*/}
                 </div>
             </div>
             <a  tabIndex={0}
