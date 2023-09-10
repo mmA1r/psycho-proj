@@ -5,9 +5,22 @@ import './about.scss';
 
 const About = () => {
     const image = <picture class={"about__image"}>
-        <source 
+        <source
             media={"(max-width: 725px)"}
-            srcset="/images/bioBackground/about-phone.jpg"
+            srcset="/images/bioBackground/about-phone@1x.avif 1x,
+                    /images/bioBackground/about-phone@2x.avif 2x"
+            type={"image/avif"}
+        />
+        <source
+            media={"(max-width: 725px)"}
+            srcset="/images/bioBackground/about-phone@1x.webp 1x,
+                    /images/bioBackground/about-phone@2x.webp 2x"
+            type={"image/webp"}
+        />
+        <source
+            media={"(max-width: 725px)"}
+            srcset="/images/bioBackground/about-phone@1x.jpg 1x,
+                    /images/bioBackground/about-phone@2x.jpg 2x"
             type={"image/jpg"}
         />
         <source 
@@ -17,14 +30,13 @@ const About = () => {
         />
         <source 
             srcset="/images/bioBackground/about-desktop@1x.webp 1x,
-                    /images/bioBackground/about-desktop@2x@2x.webp 2x"
+                    /images/bioBackground/about-desktop@2x.webp 2x"
             type={"image/webp"}
         />
         <img
-            loading={"lazy"}
             src="/images/bioBackground/about-desktop@1x.jpg"
             srcset="/images/bioBackground/about-desktop@2x.jpg 2x"
-            alt={"Фон"}
+            alt={"Екатерина Матвеева"}
         />
     </picture>;
 
