@@ -5,7 +5,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" prefix="og: http://ogp.me/ns#">
 	<head>
 		<meta charset="UTF-8" />
         <link rel="icon" href="favicon.ico">
@@ -16,7 +16,12 @@ const { title } = Astro.props;
         <meta name="keywords" content="психология, анализ, лчиность, люди, общение, терапия, восстановление" />
         <meta name="author" content="mmAir" />
         <meta name="yandex-verification" content="0e44c6ac69f2a48d" />
-        
+
+        <meta property="og:title" content={`${title}`}/>
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="Психолог. Экзистенциальный аналитик. Ценность моей работы состоит в том, что через консультационную и психотерапевтическую работу, практики осознанности, гвоздетерапию помочь человеку заглянуть в свое подсознание, обратить внимание на себя, освободиться от старых образов, детских травм, установок. Научить его получать удовольствие от жизни, понимать, что жизнь достойна, чтобы ее проживать."/>
+        <meta property="og:site_name" content={`${title}. Психолог. Экзистенциальный аналитик.`}/>
+
 		<link rel="icon" type="image/svg+xml" href="icons/lotus.svg" />
         <link rel="apple-touch-icon" href="icons/lotus-apple.png" />
         <link rel="manifest" href="manifest.json" />
